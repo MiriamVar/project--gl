@@ -1,12 +1,8 @@
-#Project-Pexeso2018
-
-##Tools
-[Trello] (https://trello.com/project-gl)
-[Slack communication] (https://project1--gl.slack.com)
-
-
 ### project--gl
 About:
+
+links: Trello-https://trello.com/project-gl
+       Slack communication-https://project1--gl.slack.com 
 
 NAME:
 
