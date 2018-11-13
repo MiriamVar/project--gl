@@ -1,37 +1,33 @@
-# project--gl
-O com to je:
+#Project-Pexeso2018
 
-NAZOV: 
-PROJEKT:
-2 (sposoby hry) verzie: pamatova, klasicka
-tie sa dalej delia na
-obrazkove pexeso(rovnake obrazky pospajat), narecia (slovo s obrazkom pospajat)
-FORMA: stranka
-OBRAZKY: 
-Vedomostne:
-Mesta (artefakty, ktore nechame prekreslit aby sa zachoval jednotny styl)- Kosice
+##Tools
+[Trello] (https://trello.com/project-gl)
+[Slack communication] (https://project1--gl.slack.com)
+
+
+### project--gl
+About:
+
+NAME:
+
+PROJECT:
+2 types of game: memory game, clasical pexeso
+dividing on:
+pexeso of pictures(2 same pictures), pexeso of vernacular (word and picture)
+
+FORM: webpage
+
+PICTURES: 
+Memory game:
+Pictures of Kosice
 Pixabay.com
 
-UVOD:
-Ak chce mat body, zaregistrovat alebo prihlasit, ak nie moze pouzivat len tak pre fun
-GDPR (nastudovat)
+INTRODUCTION:
+registration 
+GDPR (study)
 
-Otvori sa sa stranka na ktorej bude: NAZOV, odklik na klasicka alebo pamatova
-(login a zaznamenavanie skore je na nas, musime sa rozhodnut)
-dalsi rozklik: 
-vedomostne alebo len obrazkove
+Game board: NAME, 2 buttons(choosing of type of game-pexeso/memory)
+than: 2 buttons(choosing of type of game-clasical(same  pictures/word and picture)/about Kosice)
 
-JADRO:
-
-Vyberie si pocet karticiek- malo, stredne, vela
-
-ak user klikne spravne- zoskupenie paru niekde do boku, kde to bude signalizoval Score
-ak user klikne zle- naspat sa obratia
-
-SCORE: na boku (karticky, kde sa budu ukladat uhadnute)
-
-TODO:
-Urobit sketch ako to bude vyzerat
-Obrazky nafotit
-Urobit manual na pouzivanie
-
+CORE:
+Choosing count of cards- 3x3,4x4,5x5
