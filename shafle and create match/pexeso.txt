@@ -1,0 +1,16 @@
+
+
+skusit vykreslit cez dvojrozmerne pole
+
+pre odstranenie kariet po kliknuti pouzi
+https://www.w3schools.com/jsref/met_node_removechild.asp
+
+a pri restarte pre zmazanie starych kariet pouzi
+// Get the <ul> element with id="myList"
+var list = document.getElementById("myList");
+
+// As long as <ul> has a child node, remove it
+while (list.hasChildNodes()) {   
+    list.removeChild(list.firstChild);
+}
+

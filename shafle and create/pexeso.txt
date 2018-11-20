@@ -1,0 +1,41 @@
+for(int i =0; i<pole.length;i++){
+	let rand=Math.trunc(Math.random() * pole.length);
+	pole[i]=pole[rand]
+
+	treba osetrit pred opakovanim sa
+	cize ak vygenerovane cislo uz raz bolo
+	ulozit generovane cislo do pola
+	skusit buble sort(daj tam cez.length lebo velkost sa bude menit cez ten push) 
+	na to pole ci uz raz bolo generovane
+
+}
+
+
+pole = [
+
+	{
+	id="card1",
+	src="obr/1.jpg",
+	},	
+
+	{
+	id="card2",
+	src="obr/2.jpg",
+	},
+	
+	{
+	id="card3",
+	src="obr/3.jpg",
+	},
+
+];
+
+
+po prehadzovani pola sa vytvoria elementy
+for(int i =0;i<pole.length;i++){
+createElement(img).setAtributes(pole[i].src,pole[i].id);
+body.uppendchild(neviem ci toto proste chcem aby to dalo do td v table)
+} 
+
+skusit vykreslit cez dvojrozmerne pole
+
