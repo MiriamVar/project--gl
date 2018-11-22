@@ -56,6 +56,7 @@ let sizeX = 3;
 let sizeY = 4;
 
 let gameboard = []
+disableRestart();			//NA ZACIATKU SA DA KLIKNUT LEN NA NEW GAME
 
 function createGameboard() {
 	let swap = 0;
@@ -76,6 +77,7 @@ function createGameboard() {
 
 function shuffle() {					//FUNKCIA NA NAHODNE PREHADZANIE KARIET
 	//createGameboard();
+	resetVars();
 	for (i = 0; i < gameboard.length; i++) {
 		let rand = Math.trunc(Math.random() * gameboard.length);
 		let swap = gameboard[rand];
@@ -85,9 +87,11 @@ function shuffle() {					//FUNKCIA NA NAHODNE PREHADZANIE KARIET
 }
 
 function create() {
+	clearBoard();
 	createGameboard();
-	shuffle();
-	shuffle();					//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
+	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
+	disableNewGame();
+	enableRestart();
 	for (i = 0; i < gameboard.length; i++) {
 		let x = document.createElement("IMG");
 		x.setAttribute("src", "obr/empty.png");
@@ -96,6 +100,22 @@ function create() {
 		x.setAttribute("onclick", "match()");
 		document.getElementById("div").appendChild(x);
 	}
+}
+
+function disableNewGame() {			//ZNEMOZNI KLIKNUT NA NEW GAME
+    document.getElementById('newGame').disabled = true;
+}
+
+function enableNewGame() {			//OPAT JE MOZNE KLIKNUT NA NEW GAME
+    document.getElementById('newGame').disabled = false;
+}
+
+function disableRestart() {			//ZNEMOZNI KLIKNUT NA RESTART
+    document.getElementById('restart').disabled = true;
+}
+
+function enableRestart() {			//OPAT JE MOZNE KLIKNUT NA RESTART
+    document.getElementById('restart').disabled = false;
 }
 
 //PREMENNE PRE FUNKCIU MATCH	
@@ -180,12 +200,17 @@ function match() {
 
 }
 
-function clearBoard() {
-
+function clearBoard(elementID) {
+	document.getElementById('div').innerHTML = "";
+	resetFlip();
 }
 
 function restart() {
-
+	clearBoard();
+	shuffle();
+	create();		//TOTO VYMAZAT AK CHCEME ABY ZMIZLA CELA BOARD AJ S KARTICKAMI, INAC TAM ZOSTANE
+	enableNewGame();
+	disableRestart();
 }
 
 //document.getElementById("card1").src = "obr/0.jpg";
