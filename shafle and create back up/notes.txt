@@ -1,0 +1,31 @@
+let clicker=0
+let countcardF; 	//spravit z neho number
+let countcardT;		//spravit z neho number
+function match(){
+	if(clicker==2){ //len dve pokusi ma jedno kolo
+	clicker=0;
+	countcardF=0;
+	countcardT=0;
+	}
+	clicker++;
+	
+	if(memoryname==NULL && memoryid==NULL){
+	memoryname = event.target.name
+	memoryid = event.target.id
+	}
+	if(countcardF==0){
+	countcardF+1; 	
+	}
+	if((memoryname!=event.target.name) && (memoryid==event.target.id)){
+	if(countcardT==0){
+	countcardT+1; 	
+	}
+	} 
+	
+	if((countcardF+countcardT)==2){
+		alert("Found match nice 1 point to you nigga");
+	}
+
+}
+
+
