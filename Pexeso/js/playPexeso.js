@@ -44,7 +44,11 @@ function create() {
 		x.setAttribute("id", gameboard[i].id);
 		x.setAttribute("name", gameboard[i].name);
 		x.setAttribute("onclick", "match(event)");
-		document.getElementById("div").appendChild(x);
+		let y = document.createElement("DIV");
+		y.setAttribute("id", "board"+i);
+		y.setAttribute("class", "boardElement");
+		document.getElementById("gameBoard").appendChild(y);
+		document.getElementById("board"+i).appendChild(x);
 	}
 }
 
@@ -132,14 +136,32 @@ function match(event) {
 
 	if ((countcardT + countcardF) == 2) {    //AK NA DRUHY KLIK NASIEL DVE ROZDIELNE KARTY Z ROVNAKEHO PARU TAK NASIEL CELY PAR
 		points++;
-		alert("match with id:" + memoryid + "and name: " + memoryname + " to card " + event.target.id + " and name: " + event.target.name + " points: " + points);
+		let swap=document.getElementById(memoryid);
+		let newElement=document.createElement("IMG");
+		newElement.setAttribute("src", swap.src);
+		newElement.setAttribute("class", "resultElement");
+		document.getElementById("placeForCard").appendChild(newElement);
+		document.getElementById(memoryid).style.visibility='hidden';
+		document.getElementById(event.target.id).style.visibility='hidden';
+		if(points==(sizeX*sizeY)/2){
+			end();
+		}
+
 	}
 	repaint();			//PREKRESLI HRACIE POLE
 
 }
+function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
+	clearBoard();
+	document.getElementById("endGame").innerHTML="Gameover";
+	document.getElementById("placeForCard").innerHTML="";
+	points=0;
+	enableRestart();
+
+}
 
 function clearBoard(elementID) {
-	document.getElementById('div').innerHTML = "";
+	document.getElementById('gameBoard').innerHTML = "";
 	resetFlip();
 }
 
@@ -148,6 +170,7 @@ function restart() {
 	shuffle();
 	create();		//TOTO VYMAZAT AK CHCEME ABY ZMIZLA CELA BOARD AJ S KARTICKAMI, INAC TAM ZOSTANE
 	disableRestart();
+	document.getElementById("endGame").innerHTML="";
 }
 
 //document.getElementById("card1").src = "obr/0.jpg";
