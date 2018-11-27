@@ -11,7 +11,7 @@ function createGameboard() {
 		for (var j = 0; j < 2; j++) {
 			gameboard[swap] = {
 				id: "card" + i + "_" + j,
-				src: "obr/" + i + ".jpg",
+				src: "../img/mushrooms/" + i + ".jpg",
 				name: "card" + i,
 				flipped: false				//STAV, CI JE KARTA OTOCENA, TRUE=OTOCENA, FALSE=NIE JE OTOCENA
 			}
@@ -37,24 +37,15 @@ function create() {
 	clearBoard();
 	createGameboard();
 	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
-	disableNewGame();
 	enableRestart();
 	for (i = 0; i < gameboard.length; i++) {
 		let x = document.createElement("IMG");
-		x.setAttribute("src", "obr/empty.png");
+		x.setAttribute("src", "../img/mushrooms/empty.png");
 		x.setAttribute("id", gameboard[i].id);
 		x.setAttribute("name", gameboard[i].name);
-		x.setAttribute("onclick", "match()");
+		x.setAttribute("onclick", "match(event)");
 		document.getElementById("div").appendChild(x);
 	}
-}
-
-function disableNewGame() {			//ZNEMOZNI KLIKNUT NA NEW GAME
-    document.getElementById('newGame').disabled = true;
-}
-
-function enableNewGame() {			//OPAT JE MOZNE KLIKNUT NA NEW GAME
-    document.getElementById('newGame').disabled = false;
 }
 
 function disableRestart() {			//ZNEMOZNI KLIKNUT NA RESTART
@@ -99,7 +90,7 @@ function repaint() {	// FUNKCIA, ZAVOLA SA NA PREKLESLENIE PEXESA
 		}
 		else {
 			let x = document.getElementById(gameboard[i].id);
-			x.setAttribute("src", "obr/empty.png");
+			x.setAttribute("src", "../img/mushrooms/empty.png");
 		}
 	}
 }
@@ -112,7 +103,7 @@ function resetVars() { // FUNKCOA, RESETUJE PREMENNE
 	memoryid = null;
 }
 
-function match() {
+function match(event) {
 
 	console.log('menim data (pole gameboard)');
 	if (clicker == 2) { 				//RESTART PO 2 KLIKOCH AKO KOLO
@@ -156,7 +147,6 @@ function restart() {
 	clearBoard();
 	shuffle();
 	create();		//TOTO VYMAZAT AK CHCEME ABY ZMIZLA CELA BOARD AJ S KARTICKAMI, INAC TAM ZOSTANE
-	enableNewGame();
 	disableRestart();
 }
 
