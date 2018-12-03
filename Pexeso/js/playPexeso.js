@@ -11,7 +11,7 @@ function createGameboard() {
 		for (var j = 0; j < 2; j++) {
 			gameboard[swap] = {
 				id: "card" + i + "_" + j,
-				src: "obr/" + i + ".jpg",
+				src: "../img/mushrooms/" + i + ".jpg",
 				name: "card" + i,
 				flipped: false				//STAV, CI JE KARTA OTOCENA, TRUE=OTOCENA, FALSE=NIE JE OTOCENA
 			}
@@ -37,24 +37,19 @@ function create() {
 	clearBoard();
 	createGameboard();
 	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
-	disableNewGame();
 	enableRestart();
 	for (i = 0; i < gameboard.length; i++) {
 		let x = document.createElement("IMG");
-		x.setAttribute("src", "obr/empty.png");
+		x.setAttribute("src", "../img/mushrooms/empty.png");
 		x.setAttribute("id", gameboard[i].id);
 		x.setAttribute("name", gameboard[i].name);
-		x.setAttribute("onclick", "match()");
-		document.getElementById("div").appendChild(x);
+		x.setAttribute("onclick", "match(event)");
+		let y = document.createElement("DIV");
+		y.setAttribute("id", "board"+i);
+		y.setAttribute("class", "boardElement");
+		document.getElementById("gameBoard").appendChild(y);
+		document.getElementById("board"+i).appendChild(x);
 	}
-}
-
-function disableNewGame() {			//ZNEMOZNI KLIKNUT NA NEW GAME
-    document.getElementById('newGame').disabled = true;
-}
-
-function enableNewGame() {			//OPAT JE MOZNE KLIKNUT NA NEW GAME
-    document.getElementById('newGame').disabled = false;
 }
 
 function disableRestart() {			//ZNEMOZNI KLIKNUT NA RESTART
@@ -99,7 +94,7 @@ function repaint() {	// FUNKCIA, ZAVOLA SA NA PREKLESLENIE PEXESA
 		}
 		else {
 			let x = document.getElementById(gameboard[i].id);
-			x.setAttribute("src", "obr/empty.png");
+			x.setAttribute("src", "../img/mushrooms/empty.png");
 		}
 	}
 }
@@ -112,7 +107,7 @@ function resetVars() { // FUNKCOA, RESETUJE PREMENNE
 	memoryid = null;
 }
 
-function match() {
+function match(event) {
 
 	console.log('menim data (pole gameboard)');
 	if (clicker == 2) { 				//RESTART PO 2 KLIKOCH AKO KOLO
@@ -141,14 +136,32 @@ function match() {
 
 	if ((countcardT + countcardF) == 2) {    //AK NA DRUHY KLIK NASIEL DVE ROZDIELNE KARTY Z ROVNAKEHO PARU TAK NASIEL CELY PAR
 		points++;
-		alert("match with id:" + memoryid + "and name: " + memoryname + " to card " + event.target.id + " and name: " + event.target.name + " points: " + points);
+		let swap=document.getElementById(memoryid);
+		let newElement=document.createElement("IMG");
+		newElement.setAttribute("src", swap.src);
+		newElement.setAttribute("class", "resultElement");
+		document.getElementById("placeForCard").appendChild(newElement);
+		document.getElementById(memoryid).style.visibility='hidden';
+		document.getElementById(event.target.id).style.visibility='hidden';
+		if(points==(sizeX*sizeY)/2){
+			end();
+		}
+
 	}
 	repaint();			//PREKRESLI HRACIE POLE
 
 }
+function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
+	clearBoard();
+	document.getElementById("endGame").innerHTML="Gameover";
+	document.getElementById("placeForCard").innerHTML="";
+	points=0;
+	enableRestart();
+
+}
 
 function clearBoard(elementID) {
-	document.getElementById('div').innerHTML = "";
+	document.getElementById('gameBoard').innerHTML = "";
 	resetFlip();
 }
 
@@ -156,8 +169,8 @@ function restart() {
 	clearBoard();
 	shuffle();
 	create();		//TOTO VYMAZAT AK CHCEME ABY ZMIZLA CELA BOARD AJ S KARTICKAMI, INAC TAM ZOSTANE
-	enableNewGame();
 	disableRestart();
+	document.getElementById("endGame").innerHTML="";
 }
 
 //document.getElementById("card1").src = "obr/0.jpg";
