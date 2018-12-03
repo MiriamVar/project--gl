@@ -24,8 +24,8 @@ class Card {
     x.setAttribute("src",gameboard[i].src);
     x.setAttribute("id", gameboard[i].id);
     x.setAttribute("onclick", "CardFlip("+i+")");
-    let y = document.createElemnt("DIV");
-    y.setAttribute("id", "board"+ei);
+    let y = document.createElement("DIV");
+    y.setAttribute("id", "board"+i);
     y.setAttribute("class", "boardElement");
     document.getElementById("gameboard").appendChild(y);
     document.getElementById("board"+i).appendChild(x);
