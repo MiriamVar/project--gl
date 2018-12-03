@@ -13,3 +13,9 @@
 	float: left;
 	margin-left: 10px;
 }
+
+div.boardElement:hover {
+	width: 100px;
+	border:2px solid #f39e66; 
+	float: left;
+}
