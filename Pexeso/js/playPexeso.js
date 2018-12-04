@@ -11,7 +11,7 @@ let playerTwo = {
 
 
 // napevno nie
-let sizeX = 3;
+let sizeX = 6;
 let sizeY = 4;
 
 let gameboard = []
@@ -23,7 +23,7 @@ function createGameboard() {
 		for (var j = 0; j < 2; j++) {
 			gameboard[swap] = {
 				id: "card" + i + "_" + j,
-				src: "../img/mushrooms/" + i + ".jpg",
+				src: "../img/kosice/" + i + ".JPG",
 				name: "card" + i,
 				flipped: false				//STAV, CI JE KARTA OTOCENA, TRUE=OTOCENA, FALSE=NIE JE OTOCENA
 			}
@@ -52,7 +52,7 @@ function create() {
 	enableRestart();
 	for (i = 0; i < gameboard.length; i++) {
 		let x = document.createElement("IMG");
-		x.setAttribute("src", "../img/mushrooms/empty.png");
+		x.setAttribute("src", "../img/kosice/empty.png");
 		x.setAttribute("id", gameboard[i].id);
 		x.setAttribute("name", gameboard[i].name);
 		x.setAttribute("onclick", "match(event)");
@@ -104,7 +104,7 @@ function repaint() {	// FUNKCIA, ZAVOLA SA NA PREKLESLENIE PEXESA
 		}
 		else {
 			let x = document.getElementById(gameboard[i].id);
-			x.setAttribute("src", "../img/mushrooms/empty.png");
+			x.setAttribute("src", "../img/kosice/empty.png");
 		}
 	}
 }
@@ -233,7 +233,24 @@ function restart() {
 	document.getElementById("endGame").innerHTML="";
 }
 
-//document.getElementById("card1").src = "obr/0.jpg";
+function create2() {
+	clearBoard();
+	createGameboard();
+	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
+	enableRestart();
+	for (i = 0; i < gameboard.length; i++) {
+		let x = document.createElement("IMG");
+		x.setAttribute("src", "../img/kosice/" + i + ".JPG");
+		x.setAttribute("id", gameboard[i].id);
+		x.setAttribute("name", gameboard[i].name);
+		x.setAttribute("onclick", "match(event)");
+		let y = document.createElement("DIV");
+		y.setAttribute("id", "board"+i);
+		y.setAttribute("class", "boardElement");
+		document.getElementById("gameBoard").appendChild(y);
+		document.getElementById("board"+i).appendChild(x);
+	}
+}
 
 function start() {				//pri nacitani stranky
 	shuffle();

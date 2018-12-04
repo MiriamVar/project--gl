@@ -14,6 +14,11 @@
 	margin-left: 10px;
 }
 
+div.boardElement:hover {
+	width: 100px;
+	border:2px solid #f39e66; 
+	float: left;
+}
 
 /*style pre  inputy mena hracov --->*/
 
@@ -59,6 +64,3 @@ background-color: red;
 float: right;	
 background-color: blue;
 }
-
-
-/*<--- style pre tabulky mena hracov*/
