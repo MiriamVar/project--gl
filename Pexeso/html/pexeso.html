@@ -3,18 +3,28 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="../css/stylePexeso.css">
+	<meta charset="utf-8">
 
 </head>
-<body onload="restart()">
+<body onload="start()">
+
+
+<div id="inputNames">
+		<label>Name first player</label>
+		<input placeholder="firstPlayer" id="P1" type="text">
+		<label>Name second player</label>
+		<input placeholder="SecondPlayer" id="P2" type="text">
+		<input type="button" value="Enter" id="btnP">
+</div>	
+
+
 
 <button id="restart" onclick="restart()">Restart</button> 
 
+
 <div id="gameBoard"></div>
 <div id="endGame"></div>
-
-
 <div id="placeForCard"></div>
-
 <script src="../js/playPexeso.js"></script>
 </body>
 </html>
