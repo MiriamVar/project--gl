@@ -263,9 +263,9 @@ function start() {				//pri nacitani stranky
 			}else{											//ak v nich je nieco
 
 				create();									
-				disableRestart();
+				//disableRestart();
 				applieNames();
-				document.getElementById("endGame").innerHTML="";
+				//document.getElementById("endGame").innerHTML="";
 			}
 
     });
