@@ -15,7 +15,6 @@ let sizeX = 6;
 let sizeY = 4;
 
 let gameboard = []
-disableRestart();			//NA ZACIATKU SA DA KLIKNUT LEN NA NEW GAME
 
 function createGameboard() {
 	let swap = 0;
@@ -49,7 +48,6 @@ function create() {
 	clearBoard();
 	createGameboard();
 	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
-	enableRestart();
 	for (i = 0; i < gameboard.length; i++) {
 		let x = document.createElement("IMG");
 		x.setAttribute("src", "../img/kosice/empty.png");
@@ -62,14 +60,6 @@ function create() {
 		document.getElementById("gameBoard").appendChild(y);
 		document.getElementById("board"+i).appendChild(x);
 	}
-}
-
-function disableRestart() {			//ZNEMOZNI KLIKNUT NA RESTART
-    document.getElementById('restart').disabled = true;
-}
-
-function enableRestart() {			//OPAT JE MOZNE KLIKNUT NA RESTART
-    document.getElementById('restart').disabled = false;
 }
 
 //PREMENNE PRE FUNKCIU MATCH	
@@ -216,7 +206,6 @@ function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
 	playerOne.point=0;
 	playerTwo.point=0;
 	alert("winner is "+winner);
-	enableRestart();
 
 }
 
@@ -229,7 +218,6 @@ function restart() {
 	clearBoard();
 	shuffle();
 	create();		//TOTO VYMAZAT AK CHCEME ABY ZMIZLA CELA BOARD AJ S KARTICKAMI, INAC TAM ZOSTANE
-	disableRestart();
 	document.getElementById("endGame").innerHTML="";
 }
 
@@ -237,7 +225,6 @@ function create2() {
 	clearBoard();
 	createGameboard();
 	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
-	enableRestart();
 	for (i = 0; i < gameboard.length; i++) {
 		let x = document.createElement("IMG");
 		x.setAttribute("src", "../img/kosice/" + i + ".JPG");
@@ -262,8 +249,8 @@ function start() {				//pri nacitani stranky
 				alert("empty names folders");
 			}else{											//ak v nich je nieco
 
-				create();									
-				//disableRestart();
+				create();
+				//disableRestart();									
 				applieNames();
 				//document.getElementById("endGame").innerHTML="";
 			}
