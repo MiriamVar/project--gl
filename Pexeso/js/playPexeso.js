@@ -249,9 +249,10 @@ function start() {				//pri nacitani stranky
 				alert("empty names folders");
 			}else{											//ak v nich je nieco
 
-				create();									
+				create();
+				//disableRestart();									
 				applieNames();
-				document.getElementById("endGame").innerHTML="";
+				//document.getElementById("endGame").innerHTML="";
 			}
 
     });
