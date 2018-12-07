@@ -1,36 +1,35 @@
 body {
   margin: 0;
 }
-
 p {
   font-size: 17px;
 }
-
+ 
 .myNav {
-  background-image: url('../img/bcover.jpg');
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/bcover.jpg');
   background-size: 100% 100%;
   margin: 0;
   background-position: center center;
   background-repeat: no-repeat;
-  position: relative;
   top: 0;
   bottom: 0;
   height: 100vh;
   z-index: -10;
 }
+.navbar-brand.navbar-text.text-warning.h1{
+  margin-left: 30px;
+  font-style: italic;
+}
 
 .navbar.navbar-expand-lg{
-  background: rgba(107,107,102,.4);
-
+  background: rgba(0,0,0,.6);
 }
 
-.navbar.navbar-brand {
-  color: #FFFF;
-  font-weight: bolder;
-  font-size: 1.3rem;
+.navbar-nav {
+  margin-left: 1000px;
 }
 
-<<<<<<< HEAD
+
 /* background: rgba(107,107,102,.4); */
 
 
@@ -44,17 +43,23 @@ p {
   font-size: 46px;
   color: rgb(255, 193, 7);
   text-align: center;
-  font-style: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 } 
 
 div#leftContent:hover, div#rightContent:hover {
   background: rgba(255, 193, 7, 0.6);
   color: rgb(0, 0, 0);
-=======
-.navbar.navbar-nav {
+  font-style: bold;
+}
 
->>>>>>> 2158696ad69db8dcfbaf7e4b292eb92ea9a2cad7
+#leftContent {
+  margin-left: 25%;
+  margin-right: 100px;
+}
+
+#rightContent {
+  margin-right: 20%;
+  margin-left: auto;
 }
 .container-fluid {
     padding-top: 70px;
@@ -69,6 +74,7 @@ div#leftContent:hover, div#rightContent:hover {
   background-color: #ffffff; /* White */
   color: #555555;
 }
+
 /*#Fullpage
 #Fullpage-overlay {
   position: absolute;
@@ -89,3 +95,5 @@ navbar
 /*@@media query {
 
 }*/
+
+/*social pull-right
