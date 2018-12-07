@@ -2,9 +2,6 @@ body {
   margin: 0;
 }
 
-p {
-  font-size: 17px;
-}
 
 .myNav {
   background-image: url('../img/bcover.jpg');
@@ -54,19 +51,7 @@ div#leftContent:hover, div#rightContent:hover {
 .navbar.navbar-nav {
 
 }
-.container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-.bg-1 {
-    background-color: #474e5d; /* Dark Blue */
-    color: #ffffff;
-}
 
-.bg-2 {
-  background-color: #ffffff; /* White */
-  color: #555555;
-}
 /*#Fullpage
 #Fullpage-overlay {
   position: absolute;
