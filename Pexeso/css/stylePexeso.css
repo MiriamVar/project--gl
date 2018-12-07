@@ -4,20 +4,36 @@
 	padding-right: 20%;
 }
 .boardElement{
-	border:2px solid #000000; 
-	width: 100px;
-	float: left;
+    border:2px solid #00000000; 
+    border-radius: 12%;
+    width: 100px;
+    height: 100px;
+    width: auto;
+    float: left;
+    margin: 2px;
 }
 .resultElement{
 	width: 50px;
 	float: left;
-	margin-left: 10px;
+    margin-left: 10px;
 }
 
-div.boardElement:hover {
-	width: 100px;
-	border:2px solid #f39e66; 
-	float: left;
+.boardElement:hover {	
+    border:2px solid #e9bd2c; 
+    border-radius: 12%;
+    width: 100px;
+    height: 100px;
+    width: auto;
+    float: left;
+    margin: 2px;
+}
+
+.boardElement img{	
+    border-radius: 12%;
+}
+
+.boardElement:hover img{	
+    border-radius: 12%;
 }
 
 /*style pre  inputy mena hracov --->*/
@@ -56,11 +72,20 @@ div.boardElement:hover {
 
 /*style pre tabulky mena hracov --->*/
 
-#table1N {
+#table1N #mytr{
 float: left;
 background-color: red;
 }
-#table2N {
+#table2N #mytr2{
 float: right;	
 background-color: blue;
+}
+
+#table1N td img {
+    width: 20px;
+    border-radius: 12%;
+}
+#table2N td img {
+    width: 20px;
+    border-radius: 12%;
 }
