@@ -1,7 +1,9 @@
 body {
   margin: 0;
 }
-
+p {
+  font-size: 17px;
+}
  
 .myNav {
   background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/bcover.jpg');
@@ -58,6 +60,19 @@ div#leftContent:hover, div#rightContent:hover {
 #rightContent {
   margin-right: 20%;
   margin-left: auto;
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.bg-1 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+
+.bg-2 {
+  background-color: #ffffff; /* White */
+  color: #555555;
 }
 
 
