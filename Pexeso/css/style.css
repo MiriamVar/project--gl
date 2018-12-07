@@ -2,30 +2,30 @@ body {
   margin: 0;
 }
 
+
 .myNav {
-  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/bcover.jpg');
+  background-image: url('../img/bcover.jpg');
   background-size: 100% 100%;
   margin: 0;
   background-position: center center;
   background-repeat: no-repeat;
+  position: relative;
   top: 0;
   bottom: 0;
   height: 100vh;
   z-index: -10;
 }
-.navbar-brand.navbar-text.text-warning.h1{
-  margin-left: 30px;
-  font-style: italic;
-}
 
 .navbar.navbar-expand-lg{
-  background: rgba(0,0,0,.6);
+  background: rgba(107,107,102,.4);
+
 }
 
-.navbar-nav {
-  margin-left: 1000px;
+.navbar.navbar-brand {
+  color: #FFFF;
+  font-weight: bolder;
+  font-size: 1.3rem;
 }
-
 
 /* background: rgba(107,107,102,.4); */
 
@@ -48,19 +48,9 @@ div#leftContent:hover, div#rightContent:hover {
   color: rgb(0,0,0);
   font-style: bold;
 }
+.navbar.navbar-nav {
 
-#leftContent {
-  margin-left: 25%;
-  margin-right: 100px;
 }
-
-#rightContent {
-  margin-right: 20%;
-  margin-left: auto;
-}
-
-
-
 
 /*#Fullpage
 #Fullpage-overlay {
@@ -82,5 +72,3 @@ navbar
 /*@@media query {
 
 }*/
-
-/*social pull-right
