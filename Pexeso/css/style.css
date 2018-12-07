@@ -2,31 +2,33 @@ body {
   margin: 0;
 }
 
- 
+p {
+  font-size: 17px;
+}
+
 .myNav {
-  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/bcover.jpg');
+  background-image: url('../img/bcover.jpg');
   background-size: 100% 100%;
   margin: 0;
   background-position: center center;
   background-repeat: no-repeat;
+  position: relative;
   top: 0;
   bottom: 0;
   height: 100vh;
   z-index: -10;
 }
-.navbar-brand.navbar-text.text-warning.h1{
-  margin-left: 30px;
-  font-style: italic;
-}
 
 .navbar.navbar-expand-lg{
-  background: rgba(0,0,0,.6);
+  background: rgba(107,107,102,.4);
+
 }
 
-.navbar-nav {
-  margin-left: 1000px;
+.navbar.navbar-brand {
+  color: #FFFF;
+  font-weight: bolder;
+  font-size: 1.3rem;
 }
-
 
 /* background: rgba(107,107,102,.4); */
 
@@ -49,20 +51,22 @@ div#leftContent:hover, div#rightContent:hover {
   color: rgb(0,0,0);
   font-style: bold;
 }
+.navbar.navbar-nav {
 
-#leftContent {
-  margin-left: 25%;
-  margin-right: 100px;
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.bg-1 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
 }
 
-#rightContent {
-  margin-right: 20%;
-  margin-left: auto;
+.bg-2 {
+  background-color: #ffffff; /* White */
+  color: #555555;
 }
-
-
-
-
 /*#Fullpage
 #Fullpage-overlay {
   position: absolute;
@@ -83,5 +87,3 @@ navbar
 /*@@media query {
 
 }*/
-
-/*social pull-right
