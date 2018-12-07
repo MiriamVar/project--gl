@@ -16,16 +16,15 @@ body {
 }
 .navbar-brand.navbar-text.text-warning.h1{
   margin-left: 30px;
+  font-style: italic;
 }
 
 .navbar.navbar-expand-lg{
   background: rgba(158, 158, 152,.7);
 }
 
-.navbar-nav.navbar-right {
-    position: absolute;
-    left: 88.4%;
-    transform: translatex(-50%);
+.navbar-nav {
+  margin-left: 1000px;
 }
 
 
