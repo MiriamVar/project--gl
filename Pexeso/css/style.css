@@ -13,8 +13,6 @@ body {
   bottom: 0;
   height: 100vh;
   z-index: -10;
-  
-
 }
 .navbar-brand.navbar-text.text-warning.h1{
   margin-left: 30px;
@@ -22,13 +20,48 @@ body {
 }
 
 .navbar.navbar-expand-lg{
-  background: rgba(0,0,0,.6);
-
+  background: rgba(158, 158, 152,.7);
 }
 
 .navbar-nav {
   margin-left: 1000px;
 }
+
+
+/* background: rgba(107,107,102,.4); */
+
+
+#leftContent, #rightContent {
+  background: rgba(158, 158, 152, 0.6);
+  padding: 30px;
+  width: 300px;
+  height: 200px;
+  margin-top: 250px;
+  display: inline-block;
+  font-size: 46px;
+  color: rgb(196, 72, 63);
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+} 
+
+div#leftContent:hover, div#rightContent:hover {
+  background: rgba(59, 59, 57, 0.6);
+  color: rgb(233, 221, 220);
+}
+
+#leftContent {
+  margin-left: 25%;
+  margin-right: 100px;
+}
+
+#rightContent {
+  margin-right: 20%;
+  margin-left: auto;
+}
+
+
+
+
 /*#Fullpage
 #Fullpage-overlay {
   position: absolute;
