@@ -4,7 +4,7 @@ body {
 p {
   font-size: 17px;
 }
- 
+
 .myNav {
   background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/bcover.jpg');
   background-size: 100% 100%;
@@ -44,7 +44,7 @@ p {
   color: rgb(255, 193, 7);
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-} 
+}
 
 div#leftContent:hover, div#rightContent:hover {
   background: rgba(255, 193, 7, 0.6);
@@ -91,10 +91,11 @@ navbar
 .container {
 
 }
-/* webpage look on smaller devices and bigger devices*/
-/*@@media query {
+/*adding media*/
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+}
 
-}*/
 
 /*social pull-right
-
