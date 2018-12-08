@@ -1,39 +1,6 @@
 body {
   margin: 0;
 }
-<<<<<<< HEAD
-
-p {
-  font-size: 17px;
-}
-
-.myNav {
-  background-image: url('../img/bcover.jpg');
-  background-size: 100% 100%;
-  margin: 0;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  height: 100vh;
-  z-index: -10;
-}
-
-.navbar.navbar-expand-lg{
-  background: rgba(107,107,102,.4);
-
-}
-
-.navbar.navbar-brand {
-  color: #FFFF;
-  font-weight: bolder;
-  font-size: 1.3rem;
-}
-
-.navbar.navbar-nav {
-
-=======
 p {
   font-size: 17px;
 }
@@ -93,7 +60,6 @@ div#leftContent:hover, div#rightContent:hover {
 #rightContent {
   margin-right: 20%;
   margin-left: auto;
->>>>>>> 4d1543dc77c408e512ce6a7064c58f4435ded3c3
 }
 .container-fluid {
     padding-top: 70px;
@@ -107,25 +73,6 @@ div#leftContent:hover, div#rightContent:hover {
 .bg-2 {
   background-color: #ffffff; /* White */
   color: #555555;
-<<<<<<< HEAD
-}
-/*#Fullpage
-#Fullpage-overlay {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 1);
-  top:0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -5;
-}
-
-navbar
-
-.container {
-
-}
-=======
 }
 
 /*#Fullpage
@@ -144,13 +91,10 @@ navbar
 .container {
 
 }
->>>>>>> 4d1543dc77c408e512ce6a7064c58f4435ded3c3
 /* webpage look on smaller devices and bigger devices*/
 /*@@media query {
 
 }*/
-<<<<<<< HEAD
-=======
 
 /*social pull-right
->>>>>>> 4d1543dc77c408e512ce6a7064c58f4435ded3c3
+
