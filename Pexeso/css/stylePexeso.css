@@ -1,5 +1,4 @@
 body {
-<<<<<<< HEAD
   background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/bcover.jpg');  
   background-size: 100% 100%;
   margin: 0;
@@ -68,16 +67,6 @@ body {
   .left, .main, .right {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
-=======
-	background-image: url('../img/bcover.jpg');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-  	bottom: 0;
-	margin: 0;
-	position: relative;
-	top: 0;
-}
 .center {
 	margin-left: auto;
 	display: block;
@@ -140,5 +129,4 @@ div.boardElement:hover {
 #table2N {
 	float: right;
 	background-color: blue;
->>>>>>> 4d1543dc77c408e512ce6a7064c58f4435ded3c3
 }
