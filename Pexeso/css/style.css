@@ -1,6 +1,7 @@
 body {
   margin: 0;
 }
+<<<<<<< HEAD
 
 p {
   font-size: 17px;
@@ -32,6 +33,67 @@ p {
 
 .navbar.navbar-nav {
 
+=======
+p {
+  font-size: 17px;
+}
+ 
+.myNav {
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/bcover.jpg');
+  background-size: 100% 100%;
+  margin: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: -10;
+}
+.navbar-brand.navbar-text.text-warning.h1{
+  margin-left: 30px;
+  font-style: italic;
+}
+
+.navbar.navbar-expand-lg{
+  background: rgba(0,0,0,.6);
+}
+
+.navbar-nav {
+  margin-left: 1000px;
+}
+
+
+/* background: rgba(107,107,102,.4); */
+
+
+#leftContent, #rightContent {
+  background: rgba(0,0,0,.6);
+  padding: 30px;
+  width: 300px;
+  height: 200px;
+  margin-top: 250px;
+  display: inline-block;
+  font-size: 46px;
+  color: rgb(255, 193, 7);
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+} 
+
+div#leftContent:hover, div#rightContent:hover {
+  background: rgba(255, 193, 7, 0.6);
+  color: rgb(0, 0, 0);
+  font-style: bold;
+}
+
+#leftContent {
+  margin-left: 25%;
+  margin-right: 100px;
+}
+
+#rightContent {
+  margin-right: 20%;
+  margin-left: auto;
+>>>>>>> 4d1543dc77c408e512ce6a7064c58f4435ded3c3
 }
 .container-fluid {
     padding-top: 70px;
@@ -45,6 +107,7 @@ p {
 .bg-2 {
   background-color: #ffffff; /* White */
   color: #555555;
+<<<<<<< HEAD
 }
 /*#Fullpage
 #Fullpage-overlay {
@@ -62,7 +125,32 @@ navbar
 .container {
 
 }
+=======
+}
+
+/*#Fullpage
+#Fullpage-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 1);
+  top:0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -5;
+}
+
+navbar
+
+.container {
+
+}
+>>>>>>> 4d1543dc77c408e512ce6a7064c58f4435ded3c3
 /* webpage look on smaller devices and bigger devices*/
 /*@@media query {
 
 }*/
+<<<<<<< HEAD
+=======
+
+/*social pull-right
+>>>>>>> 4d1543dc77c408e512ce6a7064c58f4435ded3c3
