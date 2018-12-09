@@ -277,7 +277,7 @@ function createNameTables(){
 
 	let table1N=document.createElement("TABLE");
 	table1N.setAttribute("id","table1N");
-	document.body.appendChild(table1N);
+	document.getElementById('left').appendChild(table1N);
 
 	let N=document.createElement("TR");
 	N.setAttribute("id","mytr");
@@ -290,7 +290,7 @@ function createNameTables(){
 
 	let table2N=document.createElement("TABLE");
 	table2N.setAttribute("id","table2N");
-	document.body.appendChild(table2N);
+	document.getElementById('right').appendChild(table2N);
 
 	let N2=document.createElement("TR");
 	N2.setAttribute("id","mytr2");
