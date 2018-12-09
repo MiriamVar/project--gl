@@ -64,10 +64,11 @@ body {
 }
 /*adding media*/
 @media screen and (max-width: 800px) {
-  .left, .main, .right {
+  .left, .center, .right {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
+
 .center {
 	margin-left: auto;
 	display: inline-block;
@@ -136,29 +137,67 @@ body {
 /*<--- style pre  inputy mena hracov*/
 /*style pre tabulky mena hracov --->*/
 
-#table1N #mytr{
-float: left;
-background-color: red;
+#table1N #mytr td:first-child{
+    background-color: rgb(241, 238, 19);
+    column-span: all;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
 }
-#table2N #mytr2{
-float: right;	
-background-color: blue;
+
+#table2N #mytr2 td:first-child{
+    background-color: rgb(255, 136, 0);
+    column-span: all;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
 }
 
 #table1N {
 	float: left;
-	/* background-color: red; */
+    width: 100%;
 }
 #table2N {
 	float: right;
-	/* background-color: blue; */
+    width: 100%;
+}
+
+#table1N  td:first-child{
+	float: left;
+    /* background-color: red; */
+    width: 50px;
+}
+#table2N  td:first-child{
+	float: left;
+    /* background-color: red; */
+    width: 50px;
 }
 
 #table1N td img {
-    width: 30px;
+    width: 50px;
     border-radius: 12%;
+    display: inline-block;
+    /* float: left; */
 }
 #table2N td img {
-    width: 30px;
+    width: 50px;
     border-radius: 12%;
+    display: inline-block;
+    /* float: left; */
+}
+
+#table1N td {
+    width: 50px;
+    border-radius: 12%;
+    display: block;
+    float: left;
+    /* float: left; */
+}
+
+#table2N td {
+    width: 50px;
+    border-radius: 12%;
+    display: block;
+    float: left;
+    /* float: left; */
 }
