@@ -1,4 +1,24 @@
-let gameboard = []
+let gameboard = []; //hracia plocha
+let gameState; //aky je stav hry
+let time;
+
+class GameState {
+  constructor() {
+    this.memory = null;
+    this.score = 0;
+    this.clicks = 0;
+    this.clicker = document.getElementById("clicker");
+    this.timer = document.getElementById("timer");
+    this.ticks = 0;
+  }
+
+  restart(){
+    this.ticks = 0;
+    this.memory = 0;
+    this.score = 0;
+    this.clicks = 0;
+  }
+}
 
 class Card {
   constructor(id, src, alterSrc) {
@@ -33,13 +53,74 @@ class Card {
  }
 
  function CardFlip(index){
+  if (gameboard[index].flipped) {
+    return;
+  }
   gameboard[index].flip();
+  if(gameState.memory != null) {
+    match (index, gameState.memory);
+    gameState.memory = null;
+  }
+  else {
+    gameState.memory = index;
+  }
+  gameState.clicks++;
  }
 
+function flipBoard() {
+  for ( let i = 0; i < gameboard.length; i++){
+    gameboard[i].flip();
+  }
+  setTimeout(function() {
+    for (let i = 0; i < gameboard.length; i++) {
+      gameboard[i].flip();
+    }
+  }, 3000);
+}
+
 function setup(){
+  fillGameBoard();
   createGameboard();
   flipBoard();
+  gameState = new GameState();
+  time = setInterval(function() {
+    if (gameState.clicks > 0) {
+      gameState.ticks++;
+      redraw();
+    }
+  }, 100);
 }
+
+function restart(){
+  clearInterval(time);
+  document.getElementById("gameboard").innerHTML="";
+  setup();
+  redraw();
+}
+
+function redraw(){
+  function redraw() {
+    if (gameState.ticks<10){ //dokoncit cas, nulky atd
+      gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
+    }
+    else if(gameState.ticks>=10 && gameState.ticks<60){
+      gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : " +((gameState.ticks) % 60);
+    }
+    else if((gameState.ticks>=60 && gameState.ticks<599) && (gameState.ticks%60<10 && gameState.ticks/60<10)) {
+      gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
+    }
+    else {
+      gameState.timer.innerHTML = Math.floor((gameState.ticks) / 60)+" : "+((gameState.ticks) % 60);
+    }
+    gameState.clicker.innerHTML = "Score: " + (gameState.score/(gameState.clicks/2)).toFixed(3) + "   Clicks: "+gameState.clicks;
+    if (gameState.score == 10) {
+      clearInterval(time);
+      gameState.clicker.style = "color: green";
+    }
+  } 
+}
+
+
 
 //otacanie karty 
 function flipBoard() {
@@ -53,6 +134,44 @@ function flipBoard() {
   }, 2000)
   }
 
-  function match(){
-    
+  function match(element, mem){ //function compare
+    if (gameboard[element].src == gameboard[mem].src){
+      gameState.score++;
+      setTimeout(function() { //ak sa zhoduju, tak sa vymaze ich source a uz sa na ne nebude dat klikat
+        document.getElementById(gameboard[element].id).disabled = true;
+        document.getElementById(gameboard[mem].id).disabled = true;
+        document.getElementById(gameboard[element].id).src = "";
+        document.getElementById(gameboard[mem].id).src = "";
+      }, 400);
+    } else {
+      setTimeout(function() { //inac sa pretocia
+        gameboard[element].flip();
+        gameboard[mem].flip();
+      }, 800);
+    }
+  }
+
+  function fillGameBoard() {
+    for (let i = 0; i < 24; i=+2) {
+      gameboard[i] = new Card("card" + i), "img/kosice/"+i+".JPG", "img/kosice/empty.png";
+      gameboard[i+1] = new Card("card2" + i), "img/kosice/"+i+".JPG", "img/kosice/empty.png";
+    }
+    gameboard = shuffle(gameboard);
+  }
+
+
+  function shuffle(array) {
+    let currentIndex = array.length;
+    let temporaryValue, randomIndex;
+
+    for (let i = 0; i < 2; i++) {
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+    }
+    return array;
   }
