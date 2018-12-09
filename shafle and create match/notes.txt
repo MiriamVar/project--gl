@@ -1,7 +1,0 @@
-function restart(){
-	zmazat stare
-	shuffle()
-	create()
-}
-
-
