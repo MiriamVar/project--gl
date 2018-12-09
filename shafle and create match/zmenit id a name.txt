@@ -1,3 +1,0 @@
-Zmenit id na unikatne. card1==card1
-a name na duplicitne	card1F==card1N
-dat elementy do div s id a potom naraz dat prec div.innerhtml="";
