@@ -69,7 +69,7 @@ body {
   }
 }
 
-.center {
+#center {
 	margin-left: auto;
 	display: inline-block;
 	margin-right: auto;
@@ -113,8 +113,9 @@ body {
   	margin: 8px 0;
   	display: inline-block;
   	box-sizing: border-box;
-	color: : rgba(107, 107, 102, .4);
+	color: rgba(107, 107, 102, .4);
 }
+
 #btnP {
   	padding: 14px 20px;
   	margin: 8px 0;
