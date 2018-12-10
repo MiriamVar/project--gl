@@ -148,9 +148,11 @@ function flipBoard() {
 
 //upravit obrazky
   function fillGameBoard() {
+    let swap=0;
     for (let i = 0; i < 24; i+=2) {
-      gameBoard[i] = new Card("card" + i, "../MemoryGame/img/kosice/"+(i)+".JPG", "../MemoryGame/img/kosice/empty.png");
-      gameBoard[i+1] = new Card("card2" + i, "../MemoryGame/img/kosice/"+(i+1)+".JPG", "../MemoryGame/img/kosice/empty.png");
+      gameBoard[i] = new Card("card" + i, "../MemoryGame/img/kosice/"+(swap)+".JPG", "../MemoryGame/img/kosice/empty.png");
+      gameBoard[i+1] = new Card("card2" + (i+1), "../MemoryGame/img/kosice/"+(swap)+".JPG", "../MemoryGame/img/kosice/empty.png");
+      swap++;
     }
     gameBoard = shuffle(gameBoard);
   }
