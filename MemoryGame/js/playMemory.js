@@ -14,7 +14,7 @@ class GameState {
 
   restart(){
     this.ticks = 0;
-    this.memory = 0;
+    this.memory = null;
     this.score = 0;
     this.clicks = 0;
   }
@@ -39,7 +39,7 @@ class Card {
 
  function createGameboard() {
   for (let i = 0; i < 5; i++) {
-    gameboard[i] = new Card("card"+i,"img/kosice/"+i+".JPG","img/kosice/empty.png");
+    // gameboard[i] = new Card("card"+i,"img/kosice/"+i+".JPG","img/kosice/empty.png");
     let x = document.createElement("IMG");
     x.setAttribute("src",gameboard[i].src);
     x.setAttribute("id", gameboard[i].id);
@@ -99,25 +99,33 @@ function restart(){
 }
 
 function redraw(){
-  function redraw() {
     if (gameState.ticks<10){ //dokoncit cas, nulky atd
       gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
     }
     else if(gameState.ticks>=10 && gameState.ticks<60){
       gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : " +((gameState.ticks) % 60);
     }
-    else if((gameState.ticks>=60 && gameState.ticks<599) && (gameState.ticks%60<10 && gameState.ticks/60<10)) {
-      gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
+    else if(gameState.ticks>=60 && gameState.ticks<599) {
+        if (gameState.ticks%60<10 && gameState.ticks/60<10){
+          gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
+        }
+        else if (gameState.ticks%60<10 && gameState.ticks/60>=10){
+          gameState.timer.innerHTML = Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
+        }
+        else if (gameState.ticks%60>=10 && gameState.ticks/60<10){
+          gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ ((gameState.ticks) % 60);
+        }
+        else
+        gameState.timer.innerHTML = Math.floor((gameState.ticks) / 60)+" : "+((gameState.ticks) % 60);
     }
-    else {
-      gameState.timer.innerHTML = Math.floor((gameState.ticks) / 60)+" : "+((gameState.ticks) % 60);
+    else{
+    gameState.timer.innerHTML = Math.floor((gameState.ticks) / 60)+" : "+((gameState.ticks) % 60);
     }
     gameState.clicker.innerHTML = "Score: " + (gameState.score/(gameState.clicks/2)).toFixed(3) + "   Clicks: "+gameState.clicks;
     if (gameState.score == 10) {
       clearInterval(time);
       gameState.clicker.style = "color: green";
-    }
-  } 
+    } 
 }
 
 
@@ -152,9 +160,9 @@ function flipBoard() {
   }
 
   function fillGameBoard() {
-    for (let i = 0; i < 24; i=+2) {
-      gameboard[i] = new Card("card" + i), "img/kosice/"+i+".JPG", "img/kosice/empty.png";
-      gameboard[i+1] = new Card("card2" + i), "img/kosice/"+i+".JPG", "img/kosice/empty.png";
+    for (let i = 0; i < 12; i=+2) {
+      gameboard[i] = new Card("card" + i, "../img/kosice/"+i+".JPG", "../img/kosice/empty.png");
+      gameboard[i+1] = new Card("card2" + i, "../img/kosice/"+i+".JPG", "../img/kosice/empty.png");
     }
     gameboard = shuffle(gameboard);
   }
