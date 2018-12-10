@@ -5,9 +5,9 @@ body {
 p {
   font-size: 17px;
 }
-.column{
+/* .column{
   align: center;
-}
+} zakomentovane, lebo align neexistuje!*/
 .myNav {
   background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('../img/bcover.jpg');
   background-size: 100% 100%;
@@ -100,6 +100,7 @@ div#leftContent:hover, div#rightContent:hover {
   .left, .main, .right {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
 }
+} 
 
 
 
