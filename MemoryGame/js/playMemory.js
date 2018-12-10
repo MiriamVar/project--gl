@@ -2,6 +2,12 @@ let gameBoard = []; //hracia plocha
 let gameState; //aky je stav hry
 let time;
 
+let playerOne = {
+  name: "",
+  turn:true,
+  point:0
+}
+
 class GameState {
   constructor() {
     this.memory = null;
@@ -51,6 +57,14 @@ class Card {
     document.getElementById("board"+i).appendChild(x);
   }
  }
+
+ function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
+	restart();
+	document.getElementById("endGame").innerHTML="Gameover";
+	document.getElementById("placeForCard").innerHTML="";
+	playerOne.point=0;
+	alert("Your score is: "+ (gameState.score/(gameState.clicks/2)).toFixed(3));
+}
 
  function CardFlip(index){
   if (gameBoard[index].flipped) {
@@ -150,8 +164,8 @@ function flipBoard() {
   function fillGameBoard() {
     let swap=0;
     for (let i = 0; i < 24; i+=2) {
-      gameBoard[i] = new Card("card" + i, "../MemoryGame/img/kosice/"+(swap)+".JPG", "../MemoryGame/img/kosice/empty.png");
-      gameBoard[i+1] = new Card("card2" + (i+1), "../MemoryGame/img/kosice/"+(swap)+".JPG", "../MemoryGame/img/kosice/empty.png");
+      gameBoard[i] = new Card("card" + i, "../MemoryGame/img/kosice/"+(swap)+".JPG", "../Pexeso/img/Slang/empty1.jpg");
+      gameBoard[i+1] = new Card("card2" + (i+1), "../MemoryGame/img/kosice/"+(swap)+".JPG", "../Pexeso/img/Slang/empty1.jpg");
       swap++;
     }
     gameBoard = shuffle(gameBoard);
@@ -172,4 +186,46 @@ function flipBoard() {
       }
     }
     return array;
+  }
+
+
+  function start() {				//pri nacitani stranky
+    document.getElementById("container").style.visibility="hidden";
+    shuffle(gameBoard);
+    button = document.getElementById('btnP');
+    button.addEventListener("click", event => {			//buttonu na posielanie mien prida akoby funkciu pri kliknuti na neho
+      if(document.getElementById("P1").value ===""){
+        return;
+      }
+      else{
+        names();
+        createNameTables();
+        document.getElementById("gameboard").innerHTML="";
+        document.getElementById("container").style.visibility="visible";
+        document.getElementById("containerNames").innerHTML="";
+        setup();
+  
+      }
+      });
+  
+  }
+
+  function names(){
+    playerOne.name=document.getElementById("P1").value;
+  }
+
+  function createNameTables(){
+
+    let table1N=document.createElement("TABLE");
+    table1N.setAttribute("id","table1N");
+    document.getElementById('left').appendChild(table1N);
+  
+    let N=document.createElement("TR");
+    N.setAttribute("id","mytr");
+    document.getElementById("table1N").appendChild(N);
+  
+    let y = document.createElement("TD");
+    let t = document.createTextNode(playerOne.name);
+    y.appendChild(t);
+    document.getElementById("mytr").appendChild(y);
   }
