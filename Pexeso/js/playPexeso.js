@@ -19,18 +19,21 @@ let gameboard = []
 function createGameboard() {
 	let swap = 0;
 	for (var i = 1; i <= (sizeX * sizeY) / 2; i++) {
-		for (var j = 0; j < 2; j++) {
-			gameboard[swap] = {
-				id: "card" + i + "_" + j,
-				src: "../img/kosice/" + i + ".JPG",
-				name: "card" + i,
-				flipped: false				//STAV, CI JE KARTA OTOCENA, TRUE=OTOCENA, FALSE=NIE JE OTOCENA
-			}
-			swap++;
+		gameboard[swap] = {
+			id: "card" + i + "_" + swap,
+			src: "../img/slang/" + i + ".JPG",
+			name: "card" + i,
+			flipped: false				
 		}
-
+		swap++;
+		gameboard[swap] = {
+			id: "card" + i + "_" + swap,
+			src: "../img/slang/" + i + "text.JPG",
+			name: "card" + i,
+			flipped: false				
+		}
+		swap++;
 	}
-	//console.log(gameboard);
 }
 
 function shuffle() {					//FUNKCIA NA NAHODNE PREHADZANIE KARIET
@@ -50,7 +53,7 @@ function create() {
 	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
 	for (i = 0; i < gameboard.length; i++) {
 		let x = document.createElement("IMG");
-		x.setAttribute("src", "../img/kosice/empty.png");
+		x.setAttribute("src", "../img/kosice/empty.jpg");
 		x.setAttribute("id", gameboard[i].id);
 		x.setAttribute("name", gameboard[i].name);
 		x.setAttribute("onclick", "match(event)");
@@ -62,7 +65,7 @@ function create() {
 	}
 }
 
-//PREMENNE PRE FUNKCIU MATCH	
+//PREMENNE PRE FUNKCIU MATCH
 let countcardF = 0;
 let countcardT = 0;
 let clicker = 0;
@@ -94,12 +97,12 @@ function repaint() {	// FUNKCIA, ZAVOLA SA NA PREKLESLENIE PEXESA
 		}
 		else {
 			let x = document.getElementById(gameboard[i].id);
-			x.setAttribute("src", "../img/kosice/empty.png");
+			x.setAttribute("src", "../img/kosice/empty.jpg");
 		}
 	}
 }
 
-function resetVars() { // FUNKCOA, RESETUJE PREMENNE	
+function resetVars() { // FUNKCOA, RESETUJE PREMENNE
 	clicker = 0;
 	countcardF = 0;
 	countcardT = 0;
@@ -189,8 +192,11 @@ function match(event) {
 		if((playerOne.point+playerTwo.point)==(sizeX*sizeY)/2){
 			if(playerOne.point>playerTwo.point){
 				winner=playerOne.name;
-			}else{
+			}else if (playerOne<playerTwo){
 				winner=playerTwo.name;
+			}
+			else{
+				winner=playerOne.name +"and"+ playerTwo.name;
 			}
 			end();
 		}
@@ -240,21 +246,22 @@ function create2() {
 }
 
 function start() {				//pri nacitani stranky
+	document.getElementById("container").style.visibility="hidden";
 	shuffle();
 	button = document.getElementById('btnP');
 	button.addEventListener("click", event => {			//buttonu na posielanie mien prida akoby funkciu pri kliknuti na neho
-   
-    	names();											//ziska obsah z inputov
-			if(playerOne.name === "" || playerTwo.name === ""){		//ak su inputy prazdne 
-				alert("empty names folders");
-			}else{											//ak v nich je nieco
+		if(document.getElementById("P1").value ==="" || document.getElementById("P2").value ===""){
+			return;
+		}
+		else{
+			names();
+			createNameTables();
+			document.getElementById("gameBoard").innerHTML="";
+			document.getElementById("container").style.visibility="visible";
+			document.getElementById("containerNames").innerHTML="";
+			create();
 
-				create();
-				//disableRestart();									
-				applieNames();
-				//document.getElementById("endGame").innerHTML="";
-			}
-
+		}
     });
 
 }
@@ -265,13 +272,14 @@ function names(){
 	playerOne.name=document.getElementById("P1").value;
 	playerTwo.name=document.getElementById("P2").value;
 }
-
+/*
 function applieNames(){														//zapise mena do tabulky
 		createNameTables();
 		let remove = document.getElementById("inputNames");					//vymaze cele divko
 		remove.parentNode.removeChild(remove);
 
 }
+*/
 
 function createNameTables(){
 
@@ -300,5 +308,5 @@ function createNameTables(){
 	let t2 = document.createTextNode(playerTwo.name);
 	y2.appendChild(t2);
 	document.getElementById("mytr2").appendChild(y2);
-	
+
 }

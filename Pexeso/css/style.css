@@ -1,10 +1,11 @@
 body {
   margin: 0;
+  font-family: sans-serif;
 }
 p {
   font-size: 17px;
 }
- 
+
 .myNav {
   background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/bcover.jpg');
   background-size: 100% 100%;
@@ -41,10 +42,10 @@ p {
   margin-top: 250px;
   display: inline-block;
   font-size: 46px;
-  color: rgb(255, 193, 7);
+  color: rgb(240,173,78);
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-} 
+}
 
 div#leftContent:hover, div#rightContent:hover {
   background: rgba(255, 193, 7, 0.6);
@@ -62,12 +63,13 @@ div#leftContent:hover, div#rightContent:hover {
   margin-left: auto;
 }
 .container-fluid {
+    padding-left: 25%;
     padding-top: 70px;
     padding-bottom: 70px;
 }
 .bg-1 {
-    background-color: #474e5d; /* Dark Blue */
-    color: #ffffff;
+    background-color: #16100f; /* black */
+    color:rgb(240,173,78);
 }
 
 .bg-2 {
@@ -75,26 +77,30 @@ div#leftContent:hover, div#rightContent:hover {
   color: #555555;
 }
 
-/*#Fullpage
-#Fullpage-overlay {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 1);
-  top:0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -5;
+.bg-3 {
+  background-color: #16100f;
+  color: rgb(240,173,78);
 }
 
-navbar
-
-.container {
-
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto
 }
-/* webpage look on smaller devices and bigger devices*/
-/*@@media query {
 
-}*/
+/*adding media*/
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+}
+
+
+/*footer a {
+    color: #f5f5f5;
+}
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
 
 /*social pull-right
-

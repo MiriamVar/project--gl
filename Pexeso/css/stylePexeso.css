@@ -1,16 +1,21 @@
 body {
-  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/bcover.jpg');  
-  background-size: 100% 100%;
-  margin: 0;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/bcover.jpg');
   background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
-  top: 0;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
   bottom: 0;
+	margin: 0;
+	position: relative;
+	top: 0;
   height: 100vh;
   z-index: -10;
+  overflow: hidden;
 }
-
+.center {
+	margin-left: auto;
+	display: block;
+	margin-right: auto;
+}
 /*.nav-link {
   color: rgb(255, 193, 7);
   font-weight: bolder;
@@ -34,14 +39,13 @@ body {
 #container {
     width: 100%;
     height: 80%;
-    text-align:center;   
+    text-align:center;
 }
 #left {
     float:left;
     width:15%;
     margin-top: 12%;
     margin-left: 3%;
-    height: 45%;
     background: grey;
 }
 
@@ -50,7 +54,6 @@ body {
     margin-top: 1%;
     margin-bottom: 1%;
     width:50%;
-    height: 95%;
     background: grey;
 }
 
@@ -59,7 +62,6 @@ body {
     margin-top: 12%;
     margin-right: 3%;
     width:15%;
-    height: 45%;
     background: grey;
 }
 /*adding media*/
@@ -76,7 +78,7 @@ body {
 }
 
  .boardElement{
-    border:3px solid #00000000; 
+    border:3px solid #00000000;
     border-radius: 12%;
     float: left;
     height: 105px;
@@ -86,11 +88,11 @@ body {
 .resultElement{
 	width: 50px;
 	float: left;
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
-.boardElement:hover {	
-    border:3px solid #e9bd2c; 
+.boardElement:hover {
+    border:3px solid #e9bd2c;
     border-radius: 12%;
     float: left;
     height: 105px;
@@ -98,21 +100,54 @@ body {
     margin: 5px;
 }
 
-.boardElement img{	
+.boardElement img{
     border-radius: 12%;
 }
 
-.boardElement:hover img{	
+.boardElement:hover img{
     border-radius: 12%;
 }
 
-/*style pre  inputy mena hracov --->*/
+#leftContent, #rightContent {
+  background: rgba(0,0,0,.6);
+  padding: 30px;
+  width: 300px;
+  height: 200px;
+  margin-top: 250px;
+  display: inline-block;
+  font-size: 46px;
+  color: rgb(255, 193, 7);
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: none;
+}
+
+div#leftContent:hover, div#rightContent:hover {
+  background: rgba(255, 193, 7, 0.6);
+  color: rgb(0, 0, 0);
+  font-style: bold;
+  border: none;
+}
+
+#leftContent {
+  margin-left: 25%;
+  margin-right: 100px;
+  border: none;
+}
+
+#rightContent {
+  margin-right: 20%;
+  margin-left: auto;
+  border: none;
+}
+
+/*style pre inputy mena hracov*/
 	#inputNames input{
 	width: 100%;
 	padding: 12px 20px;
-  	margin: 8px 0;
-  	display: inline-block;
-  	box-sizing: border-box;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
 	color: rgba(107, 107, 102, .4);
 }
 
@@ -135,6 +170,7 @@ body {
  	text-align: center;
   	border-radius: 10px;
 }
+
 /*<--- style pre  inputy mena hracov*/
 /*style pre tabulky mena hracov --->*/
 
@@ -201,4 +237,8 @@ body {
     display: block;
     float: left;
     /* float: left; */
+}
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+  width: 100%; 
 }
