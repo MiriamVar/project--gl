@@ -30,9 +30,7 @@ p {
   margin-left: 1000px;
 }
 
-
 /* background: rgba(107,107,102,.4); */
-
 
 #leftContent, #rightContent {
   background: rgba(0,0,0,.6);
@@ -63,18 +61,18 @@ div#leftContent:hover, div#rightContent:hover {
   margin-left: auto;
 }
 .container-fluid {
-    padding-left: 25%;
-    padding-top: 70px;
-    padding-bottom: 70px;
+  padding-left: 25%;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 .bg-1 {
-    background-color: #16100f; /* black */
-    color:rgb(240,173,78);
+  background-color: #16100f; /* black */
+  color:rgb(240,173,78);
 }
 
 .bg-2 {
-  background-color: #ffffff; /* White */
-  color: #555555;
+  background-color: rgb(240,173,78); /* change of White color*/
+  color: #16100f;
 }
 
 .bg-3 {
@@ -83,9 +81,9 @@ div#leftContent:hover, div#rightContent:hover {
 }
 
 .img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto
+  display: block;
+  max-width: 100%;
+  height: auto
 }
 
 /*adding media*/
@@ -93,7 +91,6 @@ div#leftContent:hover, div#rightContent:hover {
   .left, .main, .right {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
 }
-
 
 /*footer a {
     color: #f5f5f5;
