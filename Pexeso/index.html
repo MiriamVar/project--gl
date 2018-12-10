@@ -29,8 +29,8 @@
 </nav>
 
 <div id="mainContent">
-   <a href="html/pexeso.html"> <div id="leftContent">pexeso game</div>
-   <a href="../MemoryGame/memoryGame.html"> <div id="rightContent">memory game</div>
+   <a href="html/pexeso.html"> <div id="leftContent">pexeso game</div> </a>
+   <a href="../MemoryGame/memoryGame.html"> <div id="rightContent">memory game</div> </a>
 </div>
 </div>
 
@@ -137,25 +137,27 @@
          <br/>Dneperská 1
          <br/>040 12
          <br/>Košice </p>
+         <div>
+         <form action="/action_page.php">
+         <p> <b> Form </b> </p>
+         <label for="firstName"> <b> Given name </b> </label>
+         <input type="text" id="firstName" name="givenName" placeholder="Enter your given name." required>
+         <label for="surname"> <b> Surname </b> </label>
+         <input type="text" id="surname" name="familyName" placeholder="Enter your surname." required>
+         <label for="message"> <b> Message </b> </label>
+         <textarea id="theMessage" name="message" rows="15" cols="10" placeholder="Please leave us a message." required>
+         </textarea>
+         <input type="submit" value="Submit">
+         </form>
+         </div>
     </div>
+
     <div class="col-sm-4">
       <p>Our telephone number is +421 905 654 490. You can contact a scrum master Tomáš Pavlík via his email address tomas.pavlik@akademiasovy.sk. Email address of IT academy SOVY is info@akademiasovy.sk. You may send us an e-mail here too.</p>
     </div>
   </div>
 </div>
 
-<div class="column">
-<form action="/action_page.php">
-<label for="firstName"> <b> Given name </b> </label>
-<input type="text" id="firstName" name="givenName" placeholder="Enter your given name." required>
-<label for="surname"> <b> Surname </b> </label>
-<input type="text" id="surname" name="familyName" placeholder="Enter your surname." required>
-<label for="message"> <b> Message </b> </label>
-<textarea id="theMessage" name="message" rows="15" cols="10" placeholder="Please leave us a message." required>
-</textarea>
-<input type="submit" value="Submit">
-</form>
-</div>
 <!-- Footer -->
 <div id="end" class="container-fluid bg-3 text-center">
   <footer<p>Memo game made by mtksl</p>

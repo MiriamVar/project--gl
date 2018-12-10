@@ -1,0 +1,27 @@
+#container{
+	width: 660px;
+	padding-left: 20%;
+	padding-right: 20%;
+	margin: auto;
+}
+#gameboard{
+	width: 600px;
+	padding-left: 20%;
+	padding-right: 20%;
+	margin: auto;
+}
+#time{
+	margin: auto;
+	width: 200px;
+}
+.boardElement{
+	border: 2px solid #000000;
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+.resultElement{
+	width: 50px;
+	float: left;
+	margin-left: 10px;
+}
