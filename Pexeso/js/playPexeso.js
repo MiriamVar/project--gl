@@ -21,14 +21,14 @@ function createGameboard() {
 	for (var i = 1; i <= (sizeX * sizeY) / 2; i++) {
 		gameboard[swap] = {
 			id: "card" + i + "_" + swap,
-			src: "../img/slang/" + i + ".JPG",
+			src: "../img/Slang/" + i + ".JPG",
 			name: "card" + i,
 			flipped: false				
 		}
 		swap++;
 		gameboard[swap] = {
 			id: "card" + i + "_" + swap,
-			src: "../img/slang/" + i + "text.JPG",
+			src: "../img/Slang/" + i + "text.JPG",
 			name: "card" + i,
 			flipped: false				
 		}

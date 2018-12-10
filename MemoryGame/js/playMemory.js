@@ -1,4 +1,4 @@
-let gameboard = []; //hracia plocha
+let gameBoard = []; //hracia plocha
 let gameState; //aky je stav hry
 let time;
 
@@ -14,7 +14,7 @@ class GameState {
 
   restart(){
     this.ticks = 0;
-    this.memory = 0;
+    this.memory = null;
     this.score = 0;
     this.clicks = 0;
   }
@@ -33,16 +33,16 @@ class Card {
     } else {
       document.getElementById(this.id).src = this.src;
     }
-    this.flipped =!this.flipped;
+    this.flipped = !this.flipped;
   }
 }
 
  function createGameboard() {
-  for (let i = 0; i < 5; i++) {
-    gameboard[i] = new Card("card"+i,"img/kosice/"+i+".JPG","img/kosice/empty.png");
+  for (let i = 0; i < gameBoard.length; i++) {
+    // gameboard[i] = new Card("card"+i,"img/kosice/"+i+".JPG","img/kosice/empty.png");
     let x = document.createElement("IMG");
-    x.setAttribute("src",gameboard[i].src);
-    x.setAttribute("id", gameboard[i].id);
+    x.setAttribute("src",gameBoard[i].src);
+    x.setAttribute("id", gameBoard[i].id);
     x.setAttribute("onclick", "CardFlip("+i+")");
     let y = document.createElement("DIV");
     y.setAttribute("id", "board"+i);
@@ -53,10 +53,10 @@ class Card {
  }
 
  function CardFlip(index){
-  if (gameboard[index].flipped) {
+  if (gameBoard[index].flipped) {
     return;
   }
-  gameboard[index].flip();
+  gameBoard[index].flip();
   if(gameState.memory != null) {
     match (index, gameState.memory);
     gameState.memory = null;
@@ -66,17 +66,6 @@ class Card {
   }
   gameState.clicks++;
  }
-
-function flipBoard() {
-  for ( let i = 0; i < gameboard.length; i++){
-    gameboard[i].flip();
-  }
-  setTimeout(function() {
-    for (let i = 0; i < gameboard.length; i++) {
-      gameboard[i].flip();
-    }
-  }, 3000);
-}
 
 function setup(){
   fillGameBoard();
@@ -88,7 +77,7 @@ function setup(){
       gameState.ticks++;
       redraw();
     }
-  }, 100);
+  }, 1000);
 }
 
 function restart(){
@@ -99,64 +88,73 @@ function restart(){
 }
 
 function redraw(){
-  function redraw() {
     if (gameState.ticks<10){ //dokoncit cas, nulky atd
       gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
     }
     else if(gameState.ticks>=10 && gameState.ticks<60){
       gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : " +((gameState.ticks) % 60);
     }
-    else if((gameState.ticks>=60 && gameState.ticks<599) && (gameState.ticks%60<10 && gameState.ticks/60<10)) {
-      gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
+    else if(gameState.ticks>=60 && gameState.ticks<599) {
+        if (gameState.ticks%60<10 && gameState.ticks/60<10){
+          gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
+        }
+        else if (gameState.ticks%60<10 && gameState.ticks/60>=10){
+          gameState.timer.innerHTML = Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
+        }
+        else if (gameState.ticks%60>=10 && gameState.ticks/60<10){
+          gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ ((gameState.ticks) % 60);
+        }
+        else
+        gameState.timer.innerHTML = Math.floor((gameState.ticks) / 60)+" : "+((gameState.ticks) % 60);
     }
-    else {
-      gameState.timer.innerHTML = Math.floor((gameState.ticks) / 60)+" : "+((gameState.ticks) % 60);
+    else{
+    gameState.timer.innerHTML = Math.floor((gameState.ticks) / 60)+" : "+((gameState.ticks) % 60);
     }
     gameState.clicker.innerHTML = "Score: " + (gameState.score/(gameState.clicks/2)).toFixed(3) + "   Clicks: "+gameState.clicks;
     if (gameState.score == 10) {
       clearInterval(time);
       gameState.clicker.style = "color: green";
-    }
-  } 
+    } 
 }
-
-
 
 //otacanie karty 
 function flipBoard() {
-  for (i = 0; i < gameboard.length; i++) {
-    gameboard[i].flip();
+  for (let i = 0; i < gameBoard.length; i++) {
+    gameBoard[i].flip();
   }
   setTimeout(function(){
-    for (i = 0; i < gameboard.length; i++) {
-      gameboard[i].flip();
+    for (let i = 0; i < gameBoard.length; i++) {
+      gameBoard[i].flip();
     }
-  }, 2000)
+  }, 3000);
   }
 
   function match(element, mem){ //function compare
-    if (gameboard[element].src == gameboard[mem].src){
+    if (gameBoard[element].src == gameBoard[mem].src){
       gameState.score++;
       setTimeout(function() { //ak sa zhoduju, tak sa vymaze ich source a uz sa na ne nebude dat klikat
-        document.getElementById(gameboard[element].id).disabled = true;
-        document.getElementById(gameboard[mem].id).disabled = true;
-        document.getElementById(gameboard[element].id).src = "";
-        document.getElementById(gameboard[mem].id).src = "";
+        document.getElementById(gameBoard[element].id).disabled = true;
+        document.getElementById(gameBoard[mem].id).disabled = true;
+        document.getElementById(gameBoard[element].id).src = "";
+        document.getElementById(gameBoard[mem].id).src = "";
       }, 400);
     } else {
       setTimeout(function() { //inac sa pretocia
-        gameboard[element].flip();
-        gameboard[mem].flip();
+        gameBoard[element].flip();
+        gameBoard[mem].flip();
       }, 800);
     }
   }
 
+//upravit obrazky
   function fillGameBoard() {
-    for (let i = 0; i < 24; i=+2) {
-      gameboard[i] = new Card("card" + i), "img/kosice/"+i+".JPG", "img/kosice/empty.png";
-      gameboard[i+1] = new Card("card2" + i), "img/kosice/"+i+".JPG", "img/kosice/empty.png";
+    let swap=0;
+    for (let i = 0; i < 24; i+=2) {
+      gameBoard[i] = new Card("card" + i, "../MemoryGame/img/kosice/"+(swap)+".JPG", "../MemoryGame/img/kosice/empty.png");
+      gameBoard[i+1] = new Card("card2" + (i+1), "../MemoryGame/img/kosice/"+(swap)+".JPG", "../MemoryGame/img/kosice/empty.png");
+      swap++;
     }
-    gameboard = shuffle(gameboard);
+    gameBoard = shuffle(gameBoard);
   }
 
 
