@@ -238,3 +238,8 @@ div#leftContent:hover, div#rightContent:hover {
     float: left;
     /* float: left; */
 }
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+  width: 100%; 
+}
+}
