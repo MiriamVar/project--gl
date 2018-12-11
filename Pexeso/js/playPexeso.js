@@ -126,6 +126,29 @@ function match(event) {
 
 	clicker++;			//POCITADLO KLIKOV
 
+
+
+
+	if(playerOne.turn==true){
+
+
+		document.getElementById("leftPointer").setAttribute("src","../img/arrowR.png");
+		document.getElementById("rightPointer").setAttribute("src","");
+
+
+	}
+		else{
+
+
+		document.getElementById("rightPointer").setAttribute("src","../img/arrowL.png");
+		document.getElementById("leftPointer").setAttribute("src","");
+
+	}
+
+
+
+
+
 	if (memoryname == null && memoryid == null) {   //PRVA ULOZENIE ABY BOLO S CIM POROVNAVAT MENO A ID
 		memoryname = event.target.name;
 		memoryid = event.target.id;
@@ -138,6 +161,11 @@ function match(event) {
 			countcardT++;
 		}
 
+	}
+
+	if ((memoryname == event.target.name) && memoryid == event.target.id) { //AK tukol na tu istu kartu ako predtym
+						//ak konkretny hrac tukol znova na tu istu kartu hra stoji
+			clicker=1;	
 	}
 
 	if ((countcardT + countcardF) == 2) {    //AK NA DRUHY KLIK NASIEL DVE ROZDIELNE KARTY Z ROVNAKEHO PARU TAK NASIEL CELY PAR
@@ -244,6 +272,7 @@ function create2() {
 		document.getElementById("gameBoard").appendChild(y);
 		document.getElementById("board"+i).appendChild(x);
 	}
+
 }
 
 function start() {				//pri nacitani stranky
@@ -292,9 +321,22 @@ function createNameTables(){
 	document.getElementById("table1N").appendChild(N);
 
 	let y = document.createElement("TD");
-	let t = document.createTextNode(playerOne.name);
+	let t = document.createElement("IMG");
+	t.setAttribute("id","leftPointer");
+	t.setAttribute("src", "../img/arrowR.png");
 	y.appendChild(t);
 	document.getElementById("mytr").appendChild(y);
+
+	y = document.createElement("TD");
+	t = document.createTextNode(playerOne.name);
+	y.appendChild(t);
+	document.getElementById("mytr").appendChild(y);
+	
+
+
+
+
+
 
 	let table2N=document.createElement("TABLE");
 	table2N.setAttribute("id","table2N");
@@ -304,9 +346,22 @@ function createNameTables(){
 	N2.setAttribute("id","mytr2");
 	document.getElementById("table2N").appendChild(N2);
 
-	let y2 = document.createElement("TD");
-	let t2 = document.createTextNode(playerTwo.name);
+
+	let  y2 = document.createElement("TD");
+	let  t2 = document.createTextNode(playerTwo.name);
 	y2.appendChild(t2);
 	document.getElementById("mytr2").appendChild(y2);
 
+	y2 = document.createElement("TD");
+	y2 = document.createElement("TD");
+	t2 = document.createElement("IMG");
+	t2.setAttribute("id","rightPointer");
+	t2.setAttribute("src", "");
+	y2.appendChild(t2);
+	document.getElementById("mytr2").appendChild(y2);
+
+
+
+
 }
+
