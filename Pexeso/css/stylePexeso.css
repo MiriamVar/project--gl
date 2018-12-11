@@ -65,7 +65,7 @@ body {
     width:15%;
     margin-top: 12%;
     margin-left: 3%;
-    background: grey;
+ /*   background: grey; */
 }
 
 #center {
@@ -73,7 +73,7 @@ body {
     margin-top: 1%;
     margin-bottom: 1%;
     width:51%;
-    background: grey;
+    background: grey; 
 }
 
 #right {
@@ -81,7 +81,7 @@ body {
     margin-top: 12%;
     margin-right: 3%;
     width:15%;
-    background: grey;
+ /*   background: grey;   */
 }
 /*adding media*/
 @media screen and (max-width: 800px) {
