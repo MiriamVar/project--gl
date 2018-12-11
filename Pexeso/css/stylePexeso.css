@@ -45,7 +45,7 @@ body {
     width:15%;
     margin-top: 12%;
     margin-left: 3%;
-    background: grey;
+ /*   background: grey;*/
 }
 
 #center {
@@ -61,7 +61,7 @@ body {
     margin-top: 12%;
     margin-right: 3%;
     width:15%;
-    background: grey;
+ /*   background: grey; */
 }
 /*adding media*/
 @media screen and (max-width: 800px) {
@@ -175,21 +175,36 @@ div#leftContent:hover, div#rightContent:hover {
 /*style pre tabulky mena hracov --->*/
 
 #table1N #mytr td:first-child{
+    column-span: all;
+    width: 30%;
+    padding-right: 0px;
+    background-color: transparent;
+}
+/*css pre druhy child*/
+#table1N #mytr td:nth-child(2){
     background-color: rgb(241, 238, 19);
     column-span: all;
-    width: 100%;
+    width: 70%;
     text-align: center;
     font-size: 24px;
 }
-
+/*css pre druhy child*/
 #table2N #mytr2 td:first-child{
+
     background-color: rgb(255, 136, 0);
     column-span: all;
-    width: 100%;
+    width: 70%;
     text-align: center;
     font-size: 24px;
 }
-
+/*css pre druhy child*/
+#table2N #mytr2 td:nth-child(2){
+    column-span: all;
+    width: 30%;
+    padding-left: 0px;
+    background-color: transparent;
+}
+/*css pre druhy child*/
 #table1N {
 	float: left;
     width: 100%;
