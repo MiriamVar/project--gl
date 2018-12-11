@@ -186,6 +186,7 @@ function match(event) {
 			document.getElementById("mytr"+playerOne.point).appendChild(y);
 
 			playerOne.point++;
+			console.log("point to "+playerOne.name+"with points "+playerOne.point);
 		}else{
 			alert("point to "+playerTwo.name);
 
@@ -202,6 +203,7 @@ function match(event) {
 			document.getElementById("mytr2"+playerTwo.point).appendChild(y2);
 
 			playerTwo.point++;
+			console.log("point to "+playerTwo.name+"with points "+playerTwo.point);
 		}
 
 		playerOne.turn=!playerOne.turn;		//obrati znova false a true aby ked to pojde resetVars zostal hrat ten ktory nasiel par
@@ -220,7 +222,7 @@ function match(event) {
 		if((playerOne.point+playerTwo.point)==(sizeX*sizeY)/2){
 			if(playerOne.point>playerTwo.point){
 				winner=playerOne.name;
-			}else if (playerOne<playerTwo){
+			}else if (playerOne.point<playerTwo.point){
 				winner=playerTwo.name;
 			}
 			else{
