@@ -16,6 +16,26 @@ body {
 	display: block;
 	margin-right: auto;
 }
+.navbar-brand.navbar-text.text-warning.h1{
+  margin-left: 30px;
+  font-style: italic;
+}
+
+.navbar.navbar-expand-lg{
+  background: rgba(0,0,0,.6);
+}
+
+.navbar-nav {
+  margin-left: 990px;
+}
+
+.ahref {
+  color: rgb(255, 193, 7);
+}
+.ahref:hover {
+  color: yellow;
+  text-decoration: none;
+}
 /*.nav-link {
   color: rgb(255, 193, 7);
   font-weight: bolder;
@@ -45,7 +65,7 @@ body {
     width:15%;
     margin-top: 12%;
     margin-left: 3%;
-    background: grey;
+ /*   background: grey; */
 }
 
 #center {
@@ -53,7 +73,7 @@ body {
     margin-top: 1%;
     margin-bottom: 1%;
     width:51%;
-    background: grey;
+    background: grey; 
 }
 
 #right {
@@ -61,7 +81,7 @@ body {
     margin-top: 12%;
     margin-right: 3%;
     width:15%;
-    background: grey;
+ /*   background: grey;   */
 }
 /*adding media*/
 @media screen and (max-width: 800px) {
@@ -142,74 +162,72 @@ div#leftContent:hover, div#rightContent:hover {
 
 /*style pre inputy mena hracov*/
 
-  #inputNames input{
+#inputName input{
 	width: 100%;
 	padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   box-sizing: border-box;
-	color: rgba(107, 107, 102, .4);
+	color: rgba(0,0,0,.6);
 }
 
 #btnP {
-  	padding: 14px 20px;
-  	margin: 8px 0;
-  	border-radius: 10%;
-  	background-color: #C0B002;
-  	color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  background-color: rgb(240,173,78);
+  color: black;
+  border: none;
 }
+
 #btnP:hover {
 	background-color: #FDED2A;
 	color: #262417;
 }
-#inputNames {
-  	background-color: #f2f2f2;
-  	padding: 10px;
-  	margin-right: 20%;
-  	margin-left: 20%;
- 	  text-align: center;
-  	border-radius: 10px;
+
+#inputName {
+  background-color: rgba(0,0,0,.6);
+  padding: 10px;
+  margin-right: 35%;
+  margin-left: 35%;
+ 	text-align: center;
+  border-radius: 10px;
+  color: #ffffff;
 }
 
 /*<--- style pre  inputy mena hracov*/
 /*style pre tabulky mena hracov --->*/
 
 #table1N #mytr td:first-child{
+    column-span: all;
+    width: 30%;
+    padding-right: 0px;
+    background-color: transparent;
+}
+/*css pre druhy child*/
+#table1N #mytr td:nth-child(2){
     background-color: rgb(241, 238, 19);
     column-span: all;
-    width: 100%;
+    width: 70%;
     text-align: center;
     font-size: 24px;
 }
-
+/*css pre druhy child*/
 #table2N #mytr2 td:first-child{
+
     background-color: rgb(255, 136, 0);
     column-span: all;
-    width: 100%;
+    width: 70%;
     text-align: center;
     font-size: 24px;
 }
-
-#table1N {
-	float: left;
-    width: 100%;
+/*css pre druhy child*/
+#table2N #mytr2 td:nth-child(2){
+    column-span: all;
+    width: 30%;
+    padding-left: 0px;
+    background-color: transparent;
 }
-#table2N {
-	float: right;
-    width: 100%;
-}
-
-#table1N  td:first-child{
-	float: left;
-    /* background-color: red; */
-    width: 50px;
-}
-#table2N  td:first-child{
-	float: left;
-    /* background-color: red; */
-    width: 50px;
-}
-
+/*css pre druhy child*/
 #table1N td img {
     width: 50px;
     border-radius: 12%;
