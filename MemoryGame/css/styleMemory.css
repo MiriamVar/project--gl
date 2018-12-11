@@ -1,15 +1,15 @@
 body {
-	background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../../Pexeso/img/bcover.jpg');
-  background-position: center center;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../../Pexeso/img/bcover.jpg');
+    background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-  bottom: 0;
+    bottom: 0;
 	margin: 0;
 	position: relative;
 	top: 0;
-  height: 100vh;
-  z-index: -10;
-  overflow: hidden;
+    height: 100vh;
+    z-index: -10;
+    overflow: hidden;
 }
 
 #container {
@@ -26,25 +26,27 @@ body {
     background: grey;
 }
 
+
+#center {
+    margin-left: auto;
+	display: inline-block;
+    margin-right: auto;
+}
+/* 
 .center {
 	margin-left: auto;
 	display: block;
 	margin-right: auto;
-}
+} */
 
 #time {
     float:right;
     margin-top: 12%;
     margin-right: 3%;
     width:15%;
-    background: grey;
-}
-
-#gameboard{
-	width: 600px;
-	padding-left: 20%;
-	padding-right: 20%;
-	margin: auto;
+    background: rgba(233, 200, 50, 0.219);
+    visibility: hidden;
+    border-radius: 12%;
 }
 
 #left {
@@ -55,10 +57,6 @@ body {
     background: grey;
 }
 
-#time{
-	margin: auto;
-	width: 200px;
-}
 .boardElement{
     border:3px solid #00000000;
     border-radius: 12%;
@@ -91,8 +89,19 @@ body {
     border-radius: 12%;
 }
 
+#inputName {
+    background-color: #f2f2f2;
+    /* width: 600px; */
+	padding: 20px;
+	margin-right: 30%;
+	margin-left: 30%;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 10%;
+}
+
 #inputNames input{
-	width: 100%;
+	width: 90%;
 	padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -100,6 +109,9 @@ body {
 	color: rgba(107, 107, 102, .4);
 }
 
+#P1 {
+    width: 100%;
+}
 #btnP {
 	padding: 14px 20px;
 	margin: 8px 0;
@@ -110,15 +122,6 @@ body {
 #btnP:hover {
   background-color: #FDED2A;
   color: #262417;
-}
-
-#inputNames {
-	background-color: #f2f2f2;
-	padding: 20px;
-	margin-right: 30%;
-	margin-left: 30%;
-   text-align: center;
-	border-radius: 10px;
 }
 
 #table1N #mytr td:first-child{
