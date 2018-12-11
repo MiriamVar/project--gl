@@ -9,7 +9,7 @@ p {
   align: center;
 } zakomentovane, lebo align neexistuje!*/
 .myNav {
-  background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('../img/bcover.jpg');
+  background-image: url('../img/bcover.jpg');
   background-size: 100% 100%;
   margin: 0;
   background-position: center center;
@@ -30,7 +30,7 @@ p {
 }
 
 .navbar-nav {
-  margin-left: 990px;
+  margin-left: 850px;
 }
 
 
@@ -46,7 +46,7 @@ p {
   display: inline-block;
   font-size: 46px;
   letter-spacing: 0.3em;
-  color: white;
+  color: rgb(61, 61, 41);
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 
