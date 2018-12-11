@@ -5,9 +5,9 @@ body {
 p {
   font-size: 17px;
 }
-.column{
+/* .column{
   align: center;
-}
+} zakomentovane, lebo align neexistuje!*/
 .myNav {
   background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('../img/bcover.jpg');
   background-size: 100% 100%;
@@ -18,10 +18,11 @@ p {
   bottom: 0;
   height: 100vh;
   z-index: -10;
+  letter-spacing: 0.3em;
 }
 .navbar-brand.navbar-text.text-warning.h1{
   margin-left: 30px;
-  font-style: italic;
+  font-style: italic
 }
 
 .navbar.navbar-expand-lg{
@@ -29,11 +30,11 @@ p {
 }
 
 .navbar-nav {
-  margin-left: 1000px;
+  margin-left: 990px;
 }
 
 
-/* background: rgba(107,107,102,.4); */
+/* background: rgba(107,107,102,.4); warning color */
 
 
 #leftContent, #rightContent {
@@ -44,9 +45,11 @@ p {
   margin-top: 250px;
   display: inline-block;
   font-size: 46px;
+  letter-spacing: 0.3em;
   color: rgb(240,173,78);
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
 }
 
 div#leftContent:hover, div#rightContent:hover {
@@ -68,6 +71,8 @@ div#leftContent:hover, div#rightContent:hover {
     padding-left: 15%;
     padding-top: 70px;
     padding-bottom: 70px;
+    font-size: 17px;
+    letter-spacing: 0.3em;
 }
 .bg-1 {
     background-color: #f0ad4e; /* orange warning */
@@ -75,8 +80,7 @@ div#leftContent:hover, div#rightContent:hover {
 }
 
 .bg-2 {
-
-  background-color: #FFFFFF; /* White */
+  background-color: #e5e5e5; /* shade of White */
   color: black;
 }
 
@@ -96,7 +100,7 @@ div#leftContent:hover, div#rightContent:hover {
   .left, .main, .right {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
 }
-
+} 
 
 
 /*footer a {
