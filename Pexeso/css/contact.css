@@ -5,10 +5,7 @@ body {
 font-family: sans-serif;
 color: white;
 }
-.bg-2 {
-  background-color: rgb(240,173,78); /* change of white color*/
-  color: #16100f;
-}
+
 .column {
 float: none;
 margin-top: 11px;
