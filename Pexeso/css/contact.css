@@ -5,6 +5,7 @@ body {
 font-family: sans-serif;
 color: white;
 }
+
 .column {
 float: none;
 margin-top: 11px;
@@ -12,10 +13,11 @@ padding: 21px;
 width: 40%;
 }
 .container {
-background-color: #4b3832;
+background-color: #eea236;
 border-radius: 14px;
 padding: 19px;
 }
+
 input[type=submit] {
 background-color: mediumseagreen;
 border: none;

@@ -1,19 +1,51 @@
 <!DOCTYPE html>
-<html lang="sk" dir="ltr">
+<html>
 <head>
-	<title></title>
+	<title>Memory Game</title>
 	<meta charset="utf-8">
-<!--	<link rel="stylesheet" href="css/style.css"> -->
-	<script src="js/playMemory.js" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width initial-scale=1.0 shrink-to-fit=0">
+    <!--connecting with css-->
+	<link rel="stylesheet" href="css/styleMemory.css">
+	<script src="js/playMemory.js"></script>
+	<!--connecting with bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
-<body onload="setup()">
+<body onload="start()">
+	<div class="myNav">
+		<nav class="navbar navbar-expand-lg">
+		  <div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarHome">
+				  <span class="icon-bar"></span>
+			  <a href="../Pexeso/index.html"><span class="glyphicon glyphicon-home">HOME</span></a>
+			  </button>
+		  </div>
+		 </nav>
+	  </div>
+
+	  <div id="containerNames">
+		<div id="inputNames">
+			<div id="inputNames">
+				  <label> Player </label>
+					<input placeholder="Enter your name" id="P1" type="text">
+				  <input type="button" value="Enter" id="btnP">
+			</div>
+		  </div>
+	  </div>
+
+
 	<div id="container">
-		<div id="gameboard"></div>
+		<div id="left"></div>
+		<div id="center">
+			<div id="gameboard"></div>
+		</div>
 		<div id="time">
 			<h3 id="timer"></h3>
 			<br>
 			<p id="clicker"></p>
 		</div>
 	</div>
+
+	<div id="endGame"></div>
+	<div id="placeForCard"></div>
 </body>
 </html>

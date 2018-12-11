@@ -6,8 +6,7 @@ body {
 }
 
 .read-more {
-    margin-left: 15px;
-    text-align: center;
+    margin-left: 20px;
     display:inline-table;
     font-size: 17px;
     letter-spacing: 0.3em;
@@ -16,16 +15,16 @@ body {
     margin: 30px auto
 }
 
-.thumbnail {
-    padding: 0 0 45px 0;
-    border: none;
-    border-radius: 0;
+.row.my-row > [class*="col-"] {
+        position: relative
 }
-.thumbnail .img {
+
+.img {
     width: 100%;
-    height: 100%;
-    margin-bottom: 5px;
 }
+
+@media (min-width:768px) {
+
 
 /* jpg size 237 x 237 px
 /* text color rgb(240,173,78) */
