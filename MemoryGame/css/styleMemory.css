@@ -70,6 +70,8 @@ body {
 	width: 50px;
 	float: left;
   margin-left: 10px;
+  border-radius: 12%;
+  margin-top: 5px;
 }
 
 .boardElement:hover {
