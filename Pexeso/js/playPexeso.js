@@ -50,7 +50,7 @@ function shuffle() {					//FUNKCIA NA NAHODNE PREHADZANIE KARIET
 function create() {
 	clearBoard();
 	createGameboard();
-	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
+	//shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
 	for (i = 0; i < gameboard.length; i++) {
 		let x = document.createElement("IMG");
 		x.setAttribute("src", "../img/kosice/empty.jpg");
@@ -199,6 +199,7 @@ function match(event) {
 				winner=playerOne.name +"and"+ playerTwo.name;
 			}
 			end();
+			return;
 		}
 
 	}
@@ -207,12 +208,12 @@ function match(event) {
 }
 function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
 	clearBoard();
-	document.getElementById("endGame").innerHTML="Gameover";
 	document.getElementById("placeForCard").innerHTML="";
 	playerOne.point=0;
 	playerTwo.point=0;
-	alert("winner is "+winner);
-
+	document.getElementById("container").style.visibility="hidden";
+	document.getElementById("endGame").style.visibility="visible";
+	document.getElementById("winn").innerHTML= "<h1 id='winn'> Winner is: "+winner+"</h1>";	
 }
 
 function clearBoard(elementID) {
@@ -247,7 +248,7 @@ function create2() {
 
 function start() {				//pri nacitani stranky
 	document.getElementById("container").style.visibility="hidden";
-	shuffle();
+	//shuffle();
 	button = document.getElementById('btnP');
 	button.addEventListener("click", event => {			//buttonu na posielanie mien prida akoby funkciu pri kliknuti na neho
 		if(document.getElementById("P1").value ==="" || document.getElementById("P2").value ===""){
@@ -260,7 +261,6 @@ function start() {				//pri nacitani stranky
 			document.getElementById("container").style.visibility="visible";
 			document.getElementById("containerNames").innerHTML="";
 			create();
-
 		}
     });
 

@@ -1,5 +1,5 @@
 body {
-  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/bcover.jpg');
+  background-image: url('../img/bcover.jpg');
   background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -237,6 +237,21 @@ div#leftContent:hover, div#rightContent:hover {
     display: block;
     float: left;
     /* float: left; */
+}
+
+#endGame{
+  position: absolute;
+  left: 25%;
+  background-color: rgba(255, 77, 166, 0.6);
+  color: rgb(0, 0, 51);
+  border-radius: 12%;
+  padding: 7%;
+  /*width:*/ 
+}
+
+#newGame{
+  margin: auto;
+  margin: 2%;
 }
 @media screen and (max-width: 800px) {
   .left, .main, .right {
