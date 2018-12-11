@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" href="../css/stylePexeso.css">
+	<title>Pexeso</title>
 	<meta charset="utf-8">
-
+	<script src="../js/playPexeso.js"></script>
+    <meta name="viewport" content="width=device-width initial-scale=1.0 shrink-to-fit=0">
+    <!--connecting with css-->
+    <link rel="stylesheet" href="../css/stylePexeso.css">
+    <!--connecting with bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body onload="start()">
+<div class="myNav">
+  <nav class="navbar navbar-expand-lg">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarHome">
+        	<span class="icon-bar"></span>
+		<a href="../index.html"><span class="glyphicon glyphicon-home">HOME</span></a>
+		</button>
+	</div>
+   </nav>
+</div>
+<br/> <br/> <br/> <br/> <br/> <br/>
+<div id="containerNames">
+  <div id="inputNames">
+      <div id="inputNames">
+            <label> Player 1 </label>
+              <input placeholder="Enter name of player 1." id="P1" type="text">
+            <label> Player 2 </label>
+              <input placeholder="Enter name of player 2." id="P2" type="text">
+            <input type="button" value="Enter" id="btnP">
+      </div>
+	</div>
+</div>
 
+<div id="container">
+   <div id="left"></div>
+   <div id="center">
+	<div id="gameBoard"></div>
+   </div>
+   <div id="right"></div>
+</div>
 
-<div id="inputNames">
-		<label>Name first player</label>
-		<input placeholder="firstPlayer" id="P1" type="text">
-		<label>Name second player</label>
-		<input placeholder="SecondPlayer" id="P2" type="text">
-		<input type="button" value="Enter" id="btnP">
-</div>	
-
-
-
-<div id="gameBoard"></div>
 <div id="endGame"></div>
 <div id="placeForCard"></div>
-<script src="../js/playPexeso.js"></script>
 </body>
 </html>

@@ -1,83 +1,115 @@
-/* position of pictures, img and img1 */
-img {
-    height: 100px;
-    width: 180px;
-    padding-left: 25%;
-    padding-top: 25%;
-    float: left;
-    position:
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+p {
+  font-size: 17px;
+}
+/* .column{
+  align: center;
+} zakomentovane, lebo align neexistuje!*/
+.myNav {
+  background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('../img/bcover.jpg');
+  background-size: 100% 100%;
+  margin: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: -10;
+  letter-spacing: 0.3em;
+}
+.navbar-brand.navbar-text.text-warning.h1{
+  margin-left: 30px;
+  font-style: italic
 }
 
-img1 {
-    height: 100px;
-    width: 180px;
-    padding-right: 25%;
-    padding-top: 25%;
-    margin: 10;  /* margin ci mam vobec pouzit */
-    float: right;
-
-}
-/* The sidebar menu */
-.sidebar {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: absolute; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+.navbar.navbar-expand-lg{
+  background: rgba(0,0,0,.6);
 }
 
-/* The sidebar links */
-.sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+.navbar-nav {
+  margin-left: 1000px;
+}
+
+
+/* background: rgba(107,107,102,.4); warning color */
+
+
+#leftContent, #rightContent {
+  background: rgba(0,0,0,.6);
+  padding: 30px;
+  width: 300px;
+  height: 200px;
+  margin-top: 250px;
+  display: inline-block;
+  font-size: 46px;
+  letter-spacing: 0.3em;
+  color: rgb(240,173,78);
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+}
+
+div#leftContent:hover, div#rightContent:hover {
+  background: rgba(255, 193, 7, 0.6);
+  color: rgb(0, 0, 0);
+  font-style: bold;
+}
+
+#leftContent {
+  margin-left: 25%;
+  margin-right: 100px;
+}
+
+#rightContent {
+  margin-right: 20%;
+  margin-left: auto;
+}
+.container-fluid {
+    padding-left: 15%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    font-size: 17px;
+    letter-spacing: 0.3em;
+}
+.bg-1 {
+    background-color: #f0ad4e; /* orange warning */
+    color: black;
+}
+
+.bg-2 {
+  background-color: #e5e5e5; /* shade of White */
+  color: black;
+}
+
+.bg-3 {
+  background-color: #f0ad4e;
+  color: black;
+}
+
+.img-responsive {
     display: block;
-    transition: 0.3s;
+    max-width: 100%;
+    height: auto
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidebar a:hover {
-    color: #f1f1f1;
+/*adding media*/
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+}
+} 
+
+
+
+/*footer a {
+    color: #f5f5f5;
+}
+footer a:hover {
+    color: #777;
+    text-decoration: none;
 }
 
-/* Position and style the close button (top right corner) */
-.sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-/* The button used to open the sidebar */
-.openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-}
-
-.openbtn:hover {
-    background-color: #444;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s; /* If you want a transition effect */
-    padding: 20px;
-    position: absolute;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-}
+/*social pull-right

@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+
+.read-more {
+    margin-left: 20px;
+    display:inline-table;
+    font-size: 17px;
+    letter-spacing: 0.3em;
+    max-width: 70%;
+    width: 50%;
+    margin: 30px auto
+}
+
+.row.my-row > [class*="col-"] {
+        position: relative
+}
+
+.img {
+    width: 100%;
+}
+
+@media (min-width:768px) {
+
+
+/* jpg size 237 x 237 px
+/* text color rgb(240,173,78) */
