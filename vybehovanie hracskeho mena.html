@@ -1,35 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script> 
-$(document).ready(function(){
-    $("#first").click(function(){
-    var one = $("#one");
-    	one.animate({opacity:"1"},"slow");
-    var two = $("#two");
-    	two.animate({left:"0",opacity:"0.5"},"slow");
-    });
-});
-
-$(document).ready(function(){
-    $("#second").click(function(){
-    var one = $("#one");
-    	one.animate({opacity:"0.5"},"slow");
-    var two = $("#two");
-    	two.animate({left:"-100",opacity:"1"},"slow");
-    });
-});
-
-function automate(){
-
-}
-
-var robot =setInterval(automate, 2000);
-
-clearInterval(robot);
-
-</script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 
 <style>
 #one{
@@ -39,6 +11,7 @@ clearInterval(robot);
     position:absolute;
     float:left;
     text-align:center;
+    left: 30px;
 }
 #two{
 	margin-left:90%;
@@ -47,6 +20,13 @@ clearInterval(robot);
     width:100px;
     position:absolute;
     text-align:center;
+}
+
+#first{
+    background: red;
+}
+#second{
+    background-color: blue;
 }
 </style>
 
@@ -58,5 +38,64 @@ clearInterval(robot);
 <div id="one">JANO</div>
 <div id="two">MICHAL</div>
 
+<h1 id="heading">Heading</h1>
+
+
+<script> 
+$(document).ready(function(){
+    $("#first").click(function(){
+    var one = $("#one");
+        one.animate({opacity:"1"},"slow");
+    var two = $("#two");
+        two.animate({left:"0",opacity:"0.5"},"slow");
+    });
+});
+
+$(document).ready(function(){
+    $("#second").click(function(){
+    var one = $("#one");
+        one.animate({opacity:"0.5"},"slow");
+    var two = $("#two");
+        two.animate({left:"-100",opacity:"1"},"slow");
+    });
+});
+
+
+
+
+let index=0;
+function getColor () {
+     index++;
+    if(index%2===0){
+        return "#f7a736";
+    }else{
+        return '#f0ad4e';
+    }
+}
+
+function applycolor (buttonCH) {
+  buttonCH.style.backgroundColor = getColor();
+}
+
+setInterval(applycolor, 300, document.getElementById('first'))
+
+let one;
+
+function move(){
+    one=document.getElementById("one");
+    setInterval(frame,1);
+}
+
+function frame(){
+    one.style.left += "10px" ;
+}
+
+
+
+</script>
+
+
+
 </body>
+
 </html>
