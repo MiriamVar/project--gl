@@ -229,6 +229,7 @@ function match(event) {
 				winner=playerOne.name +"and"+ playerTwo.name;
 			}
 			end();
+			return;
 		}
 
 	}
@@ -237,12 +238,12 @@ function match(event) {
 }
 function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
 	clearBoard();
-	document.getElementById("endGame").innerHTML="Gameover";
 	document.getElementById("placeForCard").innerHTML="";
 	playerOne.point=0;
 	playerTwo.point=0;
-	alert("winner is "+winner);
-
+	document.getElementById("container").style.visibility="hidden";
+	document.getElementById("endGame").style.visibility="visible";
+	document.getElementById("winn").innerHTML= "<h1 id='winn'> Winner is: "+winner+"</h1>";	
 }
 
 function clearBoard(elementID) {
@@ -290,8 +291,8 @@ function start() {				//pri nacitani stranky
 			document.getElementById("gameBoard").innerHTML="";
 			document.getElementById("container").style.visibility="visible";
 			document.getElementById("containerNames").innerHTML="";
+			document.getElementById("containerNames").style.marginTop="0%";
 			create();
-
 		}
     });
 
@@ -363,7 +364,7 @@ function createNameTables(){
 	document.getElementById("mytr2").appendChild(y2);
 
 
-
-
 }
-
+function reloading() {
+    location.reload();
+}
