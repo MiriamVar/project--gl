@@ -29,6 +29,13 @@ body {
   margin-left: 990px;
 }
 
+.ahref {
+  color: rgb(255, 193, 7);
+}
+.ahref:hover {
+  color: yellow;
+  text-decoration: none;
+}
 /*.nav-link {
   color: rgb(255, 193, 7);
   font-weight: bolder;
