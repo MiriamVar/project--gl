@@ -50,7 +50,7 @@ function shuffle() {					//FUNKCIA NA NAHODNE PREHADZANIE KARIET
 function create() {
 	clearBoard();
 	createGameboard();
-	//shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
+	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
 	for (i = 0; i < gameboard.length; i++) {
 		let x = document.createElement("IMG");
 		x.setAttribute("src", "../img/kosice/empty.jpg");
@@ -277,7 +277,7 @@ function create2() {
 
 function start() {				//pri nacitani stranky
 	document.getElementById("container").style.visibility="hidden";
-	//shuffle();
+	shuffle();
 	button = document.getElementById('btnP');
 	button.addEventListener("click", event => {			//buttonu na posielanie mien prida akoby funkciu pri kliknuti na neho
 		if(document.getElementById("P1").value ==="" || document.getElementById("P2").value ===""){
@@ -289,6 +289,7 @@ function start() {				//pri nacitani stranky
 			document.getElementById("gameBoard").innerHTML="";
 			document.getElementById("container").style.visibility="visible";
 			document.getElementById("containerNames").innerHTML="";
+			document.getElementById("containerNames").style.marginTop="0%";
 			create();
 		}
     });
@@ -361,7 +362,7 @@ function createNameTables(){
 	document.getElementById("mytr2").appendChild(y2);
 
 
-
-
 }
-
+function reloading() {
+    location.reload();
+}
