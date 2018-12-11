@@ -102,6 +102,7 @@ function restart(){
 }
 
 function redraw(){
+  document.getElementById('time').style.visibility="visible";
     if (gameState.ticks<10){ //dokoncit cas, nulky atd
       gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
     }
