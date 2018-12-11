@@ -213,6 +213,17 @@ div#leftContent:hover, div#rightContent:hover {
     font-size: 24px;
 }
 
+#table1N  td:first-child{
+	float: left;
+    /* background-color: red; */
+    width: 50px;
+}
+#table2N  td:first-child{
+	float: left;
+    /* background-color: red; */
+    width: 50px;
+}
+
 #table1N {
 	float: left;
     width: 100%;
