@@ -14,3 +14,9 @@ clear: both;
 content: "";
 display: table;
 }
+
+@media screen and (max-width: 800px) {
+	.left, .center, .right {
+	  width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+	}
+  }
