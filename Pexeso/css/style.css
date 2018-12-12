@@ -131,8 +131,8 @@ div#leftContent:hover, div#rightContent:hover {
 
 .img-responsive {
     display: block;
-    max-width: 100%;
-    height: auto
+    width: 106%;
+    height: 125%;
 }
 
 /*adding media*/

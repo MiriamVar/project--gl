@@ -128,27 +128,6 @@ function match(event) {
 
 
 
-
-	if(playerOne.turn==true){
-
-
-		document.getElementById("leftPointer").setAttribute("src","../img/arrowR.png");
-		document.getElementById("rightPointer").setAttribute("src","");
-
-
-	}
-		else{
-
-
-		document.getElementById("rightPointer").setAttribute("src","../img/arrowL.png");
-		document.getElementById("leftPointer").setAttribute("src","");
-
-	}
-
-
-
-
-
 	if (memoryname == null && memoryid == null) {   //PRVA ULOZENIE ABY BOLO S CIM POROVNAVAT MENO A ID
 		memoryname = event.target.name;
 		memoryid = event.target.id;
@@ -324,14 +303,7 @@ function createNameTables(){
 	document.getElementById("table1N").appendChild(N);
 
 	let y = document.createElement("TD");
-	let t = document.createElement("IMG");
-	t.setAttribute("id","leftPointer");
-	t.setAttribute("src", "../img/arrowR.png");
-	y.appendChild(t);
-	document.getElementById("mytr").appendChild(y);
-
-	y = document.createElement("TD");
-	t = document.createTextNode(playerOne.name);
+	let t = document.createTextNode(playerOne.name);
 	y.appendChild(t);
 	document.getElementById("mytr").appendChild(y);
 	
@@ -354,15 +326,6 @@ function createNameTables(){
 	let  t2 = document.createTextNode(playerTwo.name);
 	y2.appendChild(t2);
 	document.getElementById("mytr2").appendChild(y2);
-
-	y2 = document.createElement("TD");
-	y2 = document.createElement("TD");
-	t2 = document.createElement("IMG");
-	t2.setAttribute("id","rightPointer");
-	t2.setAttribute("src", "");
-	y2.appendChild(t2);
-	document.getElementById("mytr2").appendChild(y2);
-
 
 }
 function reloading() {
