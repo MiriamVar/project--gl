@@ -9,7 +9,7 @@ p {
   align: center;
 } zakomentovane, lebo align neexistuje!*/
 .myNav {
-  background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('../img/bcover.jpg');
+  background-image: url('../img/bcover.jpg');
   background-size: 100% 100%;
   margin: 0;
   background-position: center center;
@@ -30,7 +30,7 @@ p {
 }
 
 .navbar-nav {
-  margin-left: 990px;
+  margin-left: 850px;
 }
 
 
@@ -46,7 +46,7 @@ p {
   display: inline-block;
   font-size: 46px;
   letter-spacing: 0.3em;
-  color: white;
+  color: rgb(61, 61, 41);
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 
@@ -67,6 +67,41 @@ div#leftContent:hover, div#rightContent:hover {
   margin-right: 20%;
   margin-left: auto;
 }
+
+/* 
+#leftContent, #rightContent {
+  background: rgba(0,0,0,.6);
+  padding: 30px;
+  width: 300px;
+  height: 200px;
+  margin-top: 250px;
+  display: inline-block;
+  font-size: 46px;
+  color: rgb(255, 193, 7);
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: none;
+}
+
+div#leftContent:hover, div#rightContent:hover {
+  background: rgba(255, 193, 7, 0.6);
+  color: rgb(0, 0, 0);
+  font-style: bold;
+  border: none;
+}
+
+#leftContent {
+  margin-left: 25%;
+  margin-right: 100px;
+  border: none;
+}
+
+#rightContent {
+  margin-right: 20%;
+  margin-left: auto;
+  border: none;
+}
+ */
 .container-fluid {
     padding-left: 15%;
     padding-top: 70px;
@@ -75,24 +110,29 @@ div#leftContent:hover, div#rightContent:hover {
     letter-spacing: 0.3em;
 }
 .bg-1 {
-    background-color: #f0ad4e; /* orange warning */
-    color: black;
+    background-color: #191919; /* black */
+    color: #f0ad4e;
 }
 
 .bg-2 {
-  background-color: #e5e5e5; /* shade of White */
+  background-color: #f0ad4e; /* orange warning */
   color: black;
 }
 
 .bg-3 {
+  background-color: #e5e5e5; /* shade of White */
+  color: black;
+}
+
+.bg-4 {
   background-color: #f0ad4e;
   color: black;
 }
 
 .img-responsive {
     display: block;
-    max-width: 100%;
-    height: auto
+    width: 106%;
+    height: 125%;
 }
 
 /*adding media*/
@@ -100,7 +140,7 @@ div#leftContent:hover, div#rightContent:hover {
   .left, .main, .right {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
 }
-} 
+}
 
 
 /*footer a {

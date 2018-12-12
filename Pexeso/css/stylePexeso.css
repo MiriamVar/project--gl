@@ -1,5 +1,5 @@
 body {
-  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/bcover.jpg');
+  background-image: url('../img/bcover.jpg');
   background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -10,11 +10,29 @@ body {
   height: 100vh;
   z-index: -10;
   overflow: hidden;
+  letter-spacing: 0.3em;
 }
-.center {
-	margin-left: auto;
-	display: block;
-	margin-right: auto;
+
+.navbar-brand.navbar-text.text-warning.h1{
+  margin-left: 30px;
+  font-style: italic;
+}
+
+.navbar.navbar-expand-lg{
+  background: rgba(0,0,0,.6);
+   height: 70px;
+}
+
+.navbar-nav {
+  margin-left: 990px;
+}
+
+.ahref {
+  color: rgb(255, 193, 7);
+}
+.ahref:hover {
+  color: yellow;
+  text-decoration: none;
 }
 /*.nav-link {
   color: rgb(255, 193, 7);
@@ -27,47 +45,84 @@ body {
   font-size: 1.3rem;
 }*/
 
+
 .button {
-    border: none;
-    color: rgb(255, 193, 7);
-    padding: 12px 16px;
-    font-size: 10%;
-    cursor: pointer;
+  border: none;
+  color: rgb(255, 193, 7);
+  padding: 12px 16px;
+  font-size: 10%;
+  cursor: pointer;
+}
+
+#inputName input{
+	width: 100%;
+	padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+	color: rgba(0,0,0,.6);
+}
+
+#btnP {
+  padding: 14px 20px;
+  margin: 8px 0;
+  background-color: rgb(240,173,78);
+  color: black;
+  border: none;
+}
+
+#btnP:hover {
+	background-color: #FDED2A;
+	color: #262417;
+}
+
+#inputName {
+  background-color: rgba(0,0,0,.6);
+  padding: 10px;
+  margin-right: 35%;
+  margin-left: 35%;
+ 	text-align: center;
+  border-radius: 10px;
+  color: #ffffff;
 }
 
 #container {
-    width: 100%;
-    height: 80%;
-    text-align:center;
-}
-#left {
-    float:left;
-    width:15%;
-    margin-top: 12%;
-    margin-left: 3%;
- /*   background: grey;*/
+  width: 100%;
+  height: 80%;
+  text-align:center;
+  margin-top: 3.5%;
 }
 
 #center {
-    display: inline-block;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    width:51%;
-    background: grey;
+	margin-left: auto;
+	display: block;
+	margin-right: auto;
+}
+
+
+#center {
+  display: inline-block;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width:52%;
+  background: rgba(128, 128, 128, 0.616); 
+  padding-left: 1%;
+}
+
+#left {
+  float:left;
+  width:15%;
+  margin-top: 12%;
+  margin-left: 3%;
+  background: grey;
 }
 
 #right {
-    float:right;
-    margin-top: 12%;
-    margin-right: 3%;
-    width:15%;
- /*   background: grey; */
-}
-/*adding media*/
-@media screen and (max-width: 800px) {
-  .left, .center, .right {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-  }
+  float:right;
+  margin-top: 12%;
+  margin-right: 3%;
+  width:15%;
+  background: grey;  
 }
 
 #center {
@@ -80,22 +135,30 @@ body {
     border:3px solid #00000000;
     border-radius: 12%;
     float: left;
-    height: 105px;
-    width: 105px;
+    /* height: 105px;
+    width: 105px; */
+
+    width: 15%;
+    height: 24%;
     margin: 5px;
 }
 .resultElement{
 	width: 50px;
 	float: left;
   margin-left: 10px;
+
+  border-radius: 12%;
+  margin-top: 5px;
 }
 
 .boardElement:hover {
     border:3px solid #e9bd2c;
     border-radius: 12%;
     float: left;
-    height: 105px;
-    width: 105px;
+    /* height: 105px;
+    width: 105px; */
+    width: 15%;
+    height: 24%;
     margin: 5px;
 }
 
@@ -107,72 +170,22 @@ body {
     border-radius: 12%;
 }
 
-#leftContent, #rightContent {
-  background: rgba(0,0,0,.6);
-  padding: 30px;
-  width: 300px;
-  height: 200px;
-  margin-top: 250px;
-  display: inline-block;
-  font-size: 46px;
-  color: rgb(255, 193, 7);
-  text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  border: none;
-}
-
-div#leftContent:hover, div#rightContent:hover {
-  background: rgba(255, 193, 7, 0.6);
-  color: rgb(0, 0, 0);
-  font-style: bold;
-  border: none;
-}
-
-#leftContent {
-  margin-left: 25%;
-  margin-right: 100px;
-  border: none;
-}
-
-#rightContent {
-  margin-right: 20%;
-  margin-left: auto;
-  border: none;
-}
-
 /*style pre inputy mena hracov*/
 
-  #inputNames input{
-	width: 100%;
-	padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  box-sizing: border-box;
-	color: rgba(107, 107, 102, .4);
-}
 
-#btnP {
-  	padding: 14px 20px;
-  	margin: 8px 0;
-  	border-radius: 10%;
-  	background-color: #C0B002;
-  	color: white;
-}
-#btnP:hover {
-	background-color: #FDED2A;
-	color: #262417;
-}
-#inputNames {
-  	background-color: #f2f2f2;
-  	padding: 10px;
-  	margin-right: 20%;
-  	margin-left: 20%;
- 	  text-align: center;
-  	border-radius: 10px;
-}
 
 /*<--- style pre  inputy mena hracov*/
 /*style pre tabulky mena hracov --->*/
+
+#table1N {
+  width:100%;
+  float: left;
+}
+
+#table2N {
+  width:100%;
+  float: left;
+}
 
 #table1N #mytr td:first-child{
     column-span: all;
@@ -205,37 +218,17 @@ div#leftContent:hover, div#rightContent:hover {
     background-color: transparent;
 }
 /*css pre druhy child*/
-#table1N {
-	float: left;
-    width: 100%;
-}
-#table2N {
-	float: right;
-    width: 100%;
-}
-
-#table1N  td:first-child{
-	float: left;
-    /* background-color: red; */
-    width: 50px;
-}
-#table2N  td:first-child{
-	float: left;
-    /* background-color: red; */
-    width: 50px;
-}
-
 #table1N td img {
     width: 50px;
     border-radius: 12%;
-    display: inline-block;
-    /* float: left; */
+    /* display: inline-block; */
+    float: left;
 }
 #table2N td img {
     width: 50px;
     border-radius: 12%;
-    display: inline-block;
-    /* float: left; */
+    /* display: inline-block; */
+    float: left;
 }
 
 #table1N td {
@@ -253,8 +246,33 @@ div#leftContent:hover, div#rightContent:hover {
     float: left;
     /* float: left; */
 }
+
+#endGame{
+  position: absolute;
+  left: 25%;
+  background-color: rgba(0,0,0, 0.6);
+  color: rgb(255, 77, 166);
+  padding: 5%;
+  margin-top: 8%;
+}
+
+#newGame{
+  margin: auto;
+  margin-right: 15%;
+  margin-left: 20%;
+}
+
+#winn{
+  padding-bottom: 3%;
+}
+
+#containerNames{
+  margin-top: 12%;
+}
+/*adding media*/
 @media screen and (max-width: 800px) {
-  .left, .main, .right {
-  width: 100%;
+  .left, .center, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
 }
-}
+
