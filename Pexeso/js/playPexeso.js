@@ -126,28 +126,14 @@ function match(event) {
 
 	clicker++;			//POCITADLO KLIKOV
 
-
-
-
 	if(playerOne.turn==true){
-
-
 		document.getElementById("leftPointer").setAttribute("src","../img/arrowR.png");
 		document.getElementById("rightPointer").setAttribute("src","");
-
-
 	}
-		else{
-
-
+	else{
 		document.getElementById("rightPointer").setAttribute("src","../img/arrowL.png");
 		document.getElementById("leftPointer").setAttribute("src","");
-
 	}
-
-
-
-
 
 	if (memoryname == null && memoryid == null) {   //PRVA ULOZENIE ABY BOLO S CIM POROVNAVAT MENO A ID
 		memoryname = event.target.name;
@@ -171,7 +157,7 @@ function match(event) {
 	if ((countcardT + countcardF) == 2) {    //AK NA DRUHY KLIK NASIEL DVE ROZDIELNE KARTY Z ROVNAKEHO PARU TAK NASIEL CELY PAR
 
 		if(playerOne.turn==true){			//ten hrac ktory teraz hra a sa nasiel par dostane bod
-			alert("point to "+playerOne.name);
+			//alert("point to "+playerOne.name);
 
 			let swap=document.getElementById(memoryid);
 
@@ -188,7 +174,7 @@ function match(event) {
 			playerOne.point++;
 			console.log("point to "+playerOne.name+"with points "+playerOne.point);
 		}else{
-			alert("point to "+playerTwo.name);
+			//alert("point to "+playerTwo.name);
 
 			let swap2=document.getElementById(memoryid);
 
@@ -335,9 +321,6 @@ function createNameTables(){
 	y.appendChild(t);
 	document.getElementById("mytr").appendChild(y);
 	
-
-
-
 
 
 

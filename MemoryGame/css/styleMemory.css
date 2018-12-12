@@ -184,6 +184,28 @@ text-decoration: none;
     /* float: left; */
 }
 
+#endGame{
+  position: absolute;
+  left: 30%;
+  background-color: rgba(0,0,0, 0.6);
+  color: rgb(255, 77, 166);
+  padding: 5%;
+  margin-top: 8%;
+}
+
+#newGame{
+  margin: auto;
+  margin-right: 15%;
+  margin-left: 20%;
+}
+
+#winn{
+  padding-bottom: 3%;
+}
+
+#containerNames{
+  margin-top: 12%;
+}
 
 
 @media screen and (max-width: 800px) {
