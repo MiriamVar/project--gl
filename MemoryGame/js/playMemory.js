@@ -147,6 +147,10 @@ function flipBoard() {
   function match(element, mem){ //function compare
     if (gameBoard[element].src == gameBoard[mem].src){
       gameState.score++;
+      let newElement=document.createElement("IMG");
+      newElement.setAttribute("src", gameBoard[mem].src);
+      newElement.setAttribute("class", "resultElement");
+      document.getElementById("left").appendChild(newElement);
       setTimeout(function() { //ak sa zhoduju, tak sa vymaze ich source a uz sa na ne nebude dat klikat
         document.getElementById(gameBoard[element].id).disabled = true;
         document.getElementById(gameBoard[mem].id).disabled = true;
@@ -165,7 +169,7 @@ function flipBoard() {
   function fillGameBoard() {
     let swap=0;
     for (let i = 0; i < 24; i+=2) {
-      gameBoard[i] = new Card("card" + i, "../MemoryGame/img/kosice/"+(swap)+".JPG", "../Pexeso/img/Slang/empty1.jpg");
+      gameBoard[i] = new Card("card" + i, "../MemoryGame/img/kosice/"+(swap)+".JPG", "../Pexeso/img/Slang/empty1.jpg"); 
       gameBoard[i+1] = new Card("card2" + (i+1), "../MemoryGame/img/kosice/"+(swap)+".JPG", "../Pexeso/img/Slang/empty1.jpg");
       swap++;
     }

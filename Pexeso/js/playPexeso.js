@@ -186,6 +186,7 @@ function match(event) {
 			document.getElementById("mytr"+playerOne.point).appendChild(y);
 
 			playerOne.point++;
+			console.log("point to "+playerOne.name+"with points "+playerOne.point);
 		}else{
 			alert("point to "+playerTwo.name);
 
@@ -202,6 +203,7 @@ function match(event) {
 			document.getElementById("mytr2"+playerTwo.point).appendChild(y2);
 
 			playerTwo.point++;
+			console.log("point to "+playerTwo.name+"with points "+playerTwo.point);
 		}
 
 		playerOne.turn=!playerOne.turn;		//obrati znova false a true aby ked to pojde resetVars zostal hrat ten ktory nasiel par
@@ -220,13 +222,14 @@ function match(event) {
 		if((playerOne.point+playerTwo.point)==(sizeX*sizeY)/2){
 			if(playerOne.point>playerTwo.point){
 				winner=playerOne.name;
-			}else if (playerOne<playerTwo){
+			}else if (playerOne.point<playerTwo.point){
 				winner=playerTwo.name;
 			}
 			else{
 				winner=playerOne.name +"and"+ playerTwo.name;
 			}
 			end();
+			return;
 		}
 
 	}
@@ -235,12 +238,12 @@ function match(event) {
 }
 function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
 	clearBoard();
-	document.getElementById("endGame").innerHTML="Gameover";
 	document.getElementById("placeForCard").innerHTML="";
 	playerOne.point=0;
 	playerTwo.point=0;
-	alert("winner is "+winner);
-
+	document.getElementById("container").style.visibility="hidden";
+	document.getElementById("endGame").style.visibility="visible";
+	document.getElementById("winn").innerHTML= "<h1 id='winn'> Winner is: "+winner+"</h1>";	
 }
 
 function clearBoard(elementID) {
@@ -288,8 +291,8 @@ function start() {				//pri nacitani stranky
 			document.getElementById("gameBoard").innerHTML="";
 			document.getElementById("container").style.visibility="visible";
 			document.getElementById("containerNames").innerHTML="";
+			document.getElementById("containerNames").style.marginTop="0%";
 			create();
-
 		}
     });
 
@@ -361,7 +364,7 @@ function createNameTables(){
 	document.getElementById("mytr2").appendChild(y2);
 
 
-
-
 }
-
+function reloading() {
+    location.reload();
+}
