@@ -11,7 +11,7 @@
     <!--connecting with bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
+
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/aboutus.css">
 </head>
@@ -22,6 +22,8 @@
   <a class="navbar-brand navbar-text text-warning h1">Memo game</a>
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav">
+      <li class="active">
+        <a class="nav-link navbar-text text-warning" href="#rules">rules</a> </li>
       <li class="active">
         <a class="nav-link navbar-text text-warning" href="#aboutUs">about us</a> </li>
       <li class="active">
@@ -37,7 +39,44 @@
 </div>
 
 <!-- first Container -->
-<div id="aboutUs" class="container-fluid bg-1 text-center">
+<div id="rules" class="container-fluid bg-1">
+  <div class="row my-row">
+          <div class="col-sm-6">
+            <div class="content">
+            <h3 class="margin">pexeso rules</h3>
+            <ul type="square">
+              <li> Mix up small cards. </li>
+              <li> They will be laid in rows and faced down. </li>
+              <li> Turn over any two small cards. </li>
+              <li> If they match then keep them. </li>
+              <li> If there is not match then turn small cards back over. </li>
+              <li> Remember text or picture and positions of the cards. </li>
+              <li> Second player will turn over small cards. </li>
+              <li> Memory game is over when all small cards have been matched. </li>
+              <li> The player with the most matches of the cards becomes winner. </li>
+            </ul>
+          </div>
+        </div>
+    <div class="col-sm-6">
+      <div class="content">
+        <h3 class="margin">memory rules</h3>
+          <ul type="square">
+            <li> Mix up small cards. </li>
+            <li> They will be laid in rows and faced down. </li>
+            <li> Turn over any two small cards. </li>
+            <li> If they match then keep them. </li>
+            <li> If there is not match then turn small cards back over. </li>
+            <li> Remember text or picture and positions of the cards. </li>
+            <li> Second player will turn over small cards. </li>
+            <li> Memory game is over when all small cards have been matched. </li>
+            <li> The player with the most matches of the cards becomes winner. </li>
+          </ul>
+        </div>
+      </div>
+</div>
+</div>
+
+<div id="aboutUs" class="container-fluid bg-2 text-center">
   <h3 class="margin">about us</h3>
   <div class="read-more text-left">
   <p><b>mt*csl</b> is a company founded by Mima, Thomas, Claudia, Sonia and Lucy.
@@ -142,19 +181,18 @@ Launched in September of 2018, the site is focused at memo games with educationa
       </div>
     </div>
 
-    <div class="mt-5 container"> <!-- treba vycentrovat -->
-      <div class="row my-row" >
+    <div class="mt-5 container">
+      <div class="content text-center">
           <p>The last member of the team is <b>michael</b>, who doesn't like to be photographed<br> but he exists :)</p>
           </div>
         </div>
-
   </div>
 
 
 
-<!-- second Container (Grid) -->
-<div class="container-fluid bg-2 text-center">
-<div id="contact" class="container-fluid bg-2 text-center">
+<!-- third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">
+<div id="contact" class="container-fluid bg-3 text-center">
   <h3 class="margin">contacts</h3><br>
   <div class="row">
     <div class="col-sm-4">
@@ -167,30 +205,35 @@ Launched in September of 2018, the site is focused at memo games with educationa
          <br/>Dneperská 1
          <br/>040 12
          <br/>Košice </p>
-         <div>
-         <form action="/action_page.php">
-         <p> <b> Form </b> </p>
-         <label for="firstName"> <b> Given name </b> </label>
-         <input type="text" id="firstName" name="givenName" placeholder="Enter your given name." required>
-         <label for="surname"> <b> Surname </b> </label>
-         <input type="text" id="surname" name="familyName" placeholder="Enter your surname." required>
-         <label for="message"> <b> Message </b> </label>
-         <textarea id="theMessage" name="message" rows="15" cols="10" placeholder="Please leave us a message." required>
-         </textarea>
-         <input type="submit" value="Submit">
-         </form>
-         </div>
-    </div>
 
-    <div class="col-sm-4">
-      <p>Our telephone number is +421 905 654 490. You can contact a scrum master Tomáš Pavlík via his email address tomas.pavlik@akademiasovy.sk. Email address of IT academy SOVY is info@akademiasovy.sk. You may send us an e-mail here too.</p>
+         <div>
+           <form action="/action_page.php">
+             <p> <b> Form </b> </p>
+             <label for="firstName"> <b> Given name </b> </label>
+             <input type="text" id="firstName" name="givenName" placeholder="Enter your given name." required>
+             <label for="surname"> <b> Surname </b> </label>
+             <input type="text" id="surname" name="familyName" placeholder="Enter your surname." required>
+             <label for="message"> <b> Message </b> </label>
+             <textarea id="theMessage" name="message" rows="15" cols="10" placeholder="Please leave us a message." required>
+             </textarea>
+             <input type="submit" value="Submit">
+           </form>
+         </div>
+       </div>
+       <div class="col-sm-4">
+         <p>Our telephone number is +421 905 654 490. You can contact a scrum master Tomáš Pavlík via his email address tomas.pavlik@akademiasovy.sk. Email address of IT academy SOVY is info@akademiasovy.sk. You may send us an e-mail here too.</p>
+       </div>
     </div>
   </div>
 </div>
 
+
+
+
+
 <!-- Footer -->
-<div id="end" class="container-fluid bg-3 text-center">
-  <footer<p>Memo game made by mtksl</p>
+<div id="end" class="container-fluid bg-4 text-center">
+  <footer<p>Memo game made by <b>mt*csl</b></p>
 </footer>
 </div>
 
