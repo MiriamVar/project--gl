@@ -75,16 +75,21 @@ div#leftContent:hover, div#rightContent:hover {
     letter-spacing: 0.3em;
 }
 .bg-1 {
-    background-color: #f0ad4e; /* orange warning */
-    color: black;
+    background-color: #191919; /* black */
+    color: #f0ad4e;
 }
 
 .bg-2 {
-  background-color: #e5e5e5; /* shade of White */
+  background-color: #f0ad4e; /* orange warning */
   color: black;
 }
 
 .bg-3 {
+  background-color: #e5e5e5; /* shade of White */
+  color: black;
+}
+
+.bg-4 {
   background-color: #f0ad4e;
   color: black;
 }
@@ -100,7 +105,7 @@ div#leftContent:hover, div#rightContent:hover {
   .left, .main, .right {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
 }
-} 
+}
 
 
 /*footer a {
