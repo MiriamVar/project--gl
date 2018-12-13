@@ -15,11 +15,14 @@ body {
 
 .navbar-brand.navbar-text.text-warning.h1{
   margin-left: 30px;
+}
 
+.navbar-header {
+  width: 20%;
 }
 
 .navbar.navbar-expand-lg{
-  background: rgba(0,0,0,.6);
+  background: rgba(0, 0, 0, 0);
    height: 70px;
 }
 
@@ -29,9 +32,14 @@ body {
 
 .ahref {
   color: #c51f93;
+  background-color: rgba(0,0,0,.6);
+  padding: 3%;
+  margin: 1%;
+  border-radius: 7%;
+  /* font-size: 24px; */
 }
 .ahref:hover {
-  color: yellow;
+  color: rgb(201, 160, 200);
   text-decoration: none;
 }
 /*.nav-link {
@@ -138,9 +146,12 @@ body {
     float: left;
     /* height: 105px;
     width: 105px; */
-
+/* 
     width: 15%;
-    height: 24%;
+    height: 24%; */
+
+    width: auto;
+    height: auto;
     margin: 5px;
 }
 .resultElement{
@@ -159,8 +170,11 @@ body {
     float: left;
     /* height: 105px;
     width: 105px; */
-    width: 15%;
-    height: 24%;
+    /* width: 15%;
+    height: 24%; */
+
+    width: auto;
+    height: auto;
     margin: 5px;
 }
 
