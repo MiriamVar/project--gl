@@ -9,6 +9,31 @@ let playerTwo = {
 				point:0
 }
 
+function changePlayerColor(turn){
+	if(turn == true){
+			let nameOne = document.getElementById("nameOne");
+			nameOne.style.border = "";
+			nameOne.style.borderRadius = "12px";
+			nameOne.style.backgroundColor = "rgb(197, 31, 147, 1)";
+
+			nameTwo.style.border = "thick solid rgb(255, 255, 255, 0.4)";
+			nameTwo.style.borderRadius = "12px";
+			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 0)";
+		//	nameTwo.style.borderRadius = "";
+		
+		}else{
+			let nameTwo = document.getElementById("nameTwo");
+			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 1)";
+			nameTwo.style.border = "";
+			nameTwo.style.borderRadius = "12px";
+
+			nameOne.style.border = "thick solid rgb(255, 255, 255, 0.4)";
+			nameOne.style.borderRadius = "12px";
+			nameOne.style.backgroundColor = "rgb(197, 31, 147, 0)";
+		//	nameOne.style.borderRadius = "";
+
+		}
+}
 
 // napevno nie
 let sizeX = 6;
@@ -127,29 +152,7 @@ function match(event) {
 
 	clicker++;			//POCITADLO KLIKOV
 
-		if(playerOne.turn == true){
-			let nameOne = document.getElementById("nameOne");
-			nameOne.style.border = "";
-			nameOne.style.borderRadius = "12px";
-			nameOne.style.backgroundColor = "rgb(197, 31, 147, 1)";
-
-			nameTwo.style.border = "thick solid rgb(255, 255, 255, 0.4)";
-			nameTwo.style.borderRadius = "12px";
-			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 0)";
-		//	nameTwo.style.borderRadius = "";
-		
-		}else{
-			let nameTwo = document.getElementById("nameTwo");
-			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 1)";
-			nameTwo.style.border = "";
-			nameTwo.style.borderRadius = "12px";
-
-			nameOne.style.border = "thick solid rgb(255, 255, 255, 0.4)";
-			nameOne.style.borderRadius = "12px";
-			nameOne.style.backgroundColor = "rgb(197, 31, 147, 0)";
-		//	nameOne.style.borderRadius = "";
-
-		}
+	changePlayerColor(playerOne.turn);
 
 	if (memoryname == null && memoryid == null) {   //PRVA ULOZENIE ABY BOLO S CIM POROVNAVAT MENO A ID
 		memoryname = event.target.name;
@@ -301,6 +304,7 @@ function start() {				//pri nacitani stranky
 		else{
 			names();
 			createNameTables();
+			changePlayerColor(true);
 			document.getElementById("gameBoard").innerHTML="";
 			document.getElementById("container").style.visibility="visible";
 			document.getElementById("containerNames").innerHTML="";
@@ -308,7 +312,6 @@ function start() {				//pri nacitani stranky
 			create();
 		}
     });
-
 }
 
 let button;
