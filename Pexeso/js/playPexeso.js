@@ -378,7 +378,7 @@ function flickerMatch(id){
 
 function flick(nameCH, idForColor){
   nameCH.style.backgroundColor = getColor(idForColor);
-  if(index===16){    //PO 6 BLIKOCH VYPNUT 
+  if(index===17){    //PO 6 BLIKOCH VYPNUT 
      clearInterval(inter);
 
     }
