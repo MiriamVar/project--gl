@@ -29,7 +29,7 @@ p {
 }
 
 .navbar-nav {
-  margin-left: 850px;
+  margin-left: 70%;
 }
 
 
@@ -39,7 +39,7 @@ p {
 #leftContent, #rightContent {
   background: rgba(247,167,54,.6);
   padding: 30px;
-  width: 300px;
+  width: 25%;
   height: 200px;
   margin-top: 250px;
   display: inline-block;
@@ -59,12 +59,12 @@ div#leftContent:hover, div#rightContent:hover {
 
 #leftContent {
   margin-left: 25%;
-  margin-right: 100px;
+  margin-right: auto;
 }
 
 #rightContent {
-  margin-right: 20%;
-  margin-left: auto;
+  margin-right: auto;
+  margin-left: 100px;
 }
 
 /* 
