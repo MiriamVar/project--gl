@@ -122,20 +122,20 @@ body {
    color: rgba(0,0,0,.6);
 }
 
-#btnP {
-   padding: 14px 20px;
-   margin: 8px 0;
-   background-color: rgb(240,173,78);
-   color: black;
-   border: none;
-}
-
 #containerNames{
    margin-top: 12%;
 }
 
+#btnP {
+   padding: 14px 20px;
+   margin: 8px 0;
+   background-color: rgb(201, 160, 200);
+   color: #06134d;
+   border: none;
+}
+
 #btnP:hover {
-   background-color: #FDED2A;
+   background-color: #c51f93;
    color: #262417;
 }
 
