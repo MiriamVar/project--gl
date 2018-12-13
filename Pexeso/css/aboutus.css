@@ -19,7 +19,8 @@ body {
         position: relative
 }
 
-.img {
+.thumbnail {   /* mozno odstranim */
+    height: 100%;
     width: 100%;
 }
 
