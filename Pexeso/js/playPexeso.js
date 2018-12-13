@@ -371,24 +371,33 @@ function reloading() {
 let index=0;
 let inter;
 function flickerMatch(id){
-	inter = setInterval(flick, 100, document.getElementById(id));
+	inter = setInterval(flick, 100, document.getElementById(id), id);
 	index=0;
 
 }
 
-function flick(nameCH){
-  nameCH.style.backgroundColor = getColor();
-  if(index===6){    //PO 6 BLIKOCH VYPNUT 
+function flick(nameCH, idForColor){
+  nameCH.style.backgroundColor = getColor(idForColor);
+  if(index===16){    //PO 6 BLIKOCH VYPNUT 
      clearInterval(inter);
 
     }
 }
 
-function getColor () {
+function getColor (idForColor) {
      index++;
-    if(index%2===0){
-        return "rgb(247, 167, 54, .5)";
+
+    if (idForColor === "nameOne") {
+    	if(index%2===0){
+        	return "rgb(197, 31, 147, .5)";
+    	}else{
+        	return "rgb(197, 31, 147, 1)";
+    	}
     }else{
-        return "rgb(247, 167, 54, 1)";
+    	if(index%2===0){
+        	return "rgb(6, 19, 77, .5)";
+    	}else{
+        	return "rgb(6, 19, 77, 1)";
+    	}
     }
 }
