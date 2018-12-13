@@ -59,13 +59,18 @@ class Card {
  }
 
  function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
-	restart();
-	document.getElementById("endGame").innerHTML="Gameover";
-	document.getElementById("placeForCard").innerHTML="";
-	playerOne.point=0;
-	alert("Your score is: "+ (gameState.score/(gameState.clicks/2)).toFixed(3));
-}
-
+    restart();
+    document.getElementById("placeForCard").innerHTML="";
+    playerOne.point=0;
+    document.getElementById("container").style.visibility="hidden";
+    document.getElementById("endGame").style.visibility="visible";
+    document.getElementById('time').style.visibility="hidden";
+    let winScore=(gameState.score/(gameState.clicks/2)).toFixed(3);
+    console.log(winScore);
+    document.getElementById("winn").innerHTML= "<h1 id='winn'> Your score is: "+(winScore*1000)+"</h1>";
+    //alert("Your score is: "+ (gameState.score/(gameState.clicks/2)).toFixed(3));
+  }
+	
  function CardFlip(index){
   if (gameBoard[index].flipped) {
     return;
@@ -97,7 +102,6 @@ function setup(){
 function restart(){
   clearInterval(time);
   document.getElementById("gameboard").innerHTML="";
-  setup();
   redraw();
 }
 
@@ -144,6 +148,8 @@ function flipBoard() {
   }, 3000);
   }
 
+let resultElementCount=0;
+
   function match(element, mem){ //function compare
     if (gameBoard[element].src == gameBoard[mem].src){
       gameState.score++;
@@ -151,6 +157,7 @@ function flipBoard() {
       newElement.setAttribute("src", gameBoard[mem].src);
       newElement.setAttribute("class", "resultElement");
       document.getElementById("left").appendChild(newElement);
+      resultElementCount++;
       setTimeout(function() { //ak sa zhoduju, tak sa vymaze ich source a uz sa na ne nebude dat klikat
         document.getElementById(gameBoard[element].id).disabled = true;
         document.getElementById(gameBoard[mem].id).disabled = true;
@@ -162,6 +169,13 @@ function flipBoard() {
         gameBoard[element].flip();
         gameBoard[mem].flip();
       }, 800);
+    }
+
+    if (resultElementCount==12) {
+      setTimeout(function(){
+        end();
+      },800);
+      resultElementCount=0;
     }
   }
 
@@ -208,6 +222,7 @@ function flipBoard() {
         document.getElementById("gameboard").innerHTML="";
         document.getElementById("container").style.visibility="visible";
         document.getElementById("containerNames").innerHTML="";
+        document.getElementById("containerNames").style.marginTop="0%";
         setup();
   
       }
@@ -234,3 +249,7 @@ function flipBoard() {
     y.appendChild(t);
     document.getElementById("mytr").appendChild(y);
   }
+
+  function reloading() {
+    location.reload();
+}

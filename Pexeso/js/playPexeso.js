@@ -127,7 +127,6 @@ function match(event) {
 	clicker++;			//POCITADLO KLIKOV
 
 
-
 	if (memoryname == null && memoryid == null) {   //PRVA ULOZENIE ABY BOLO S CIM POROVNAVAT MENO A ID
 		memoryname = event.target.name;
 		memoryid = event.target.id;
@@ -139,7 +138,6 @@ function match(event) {
 		if (countcardT == 0) {
 			countcardT++;
 		}
-
 	}
 
 	if ((memoryname == event.target.name) && memoryid == event.target.id) { //AK tukol na tu istu kartu ako predtym
@@ -148,38 +146,48 @@ function match(event) {
 	}
 
 	if ((countcardT + countcardF) == 2) {    //AK NA DRUHY KLIK NASIEL DVE ROZDIELNE KARTY Z ROVNAKEHO PARU TAK NASIEL CELY PAR
-
+		let riadok=0;
 		if(playerOne.turn==true){			//ten hrac ktory teraz hra a sa nasiel par dostane bod
-			alert("point to "+playerOne.name);
+			//alert("point to "+playerOne.name);
 
 			let swap=document.getElementById(memoryid);
 
-			let N=document.createElement("TR");
-			N.setAttribute("id","mytr"+playerOne.point);
-			document.getElementById("table1N").appendChild(N);
+			// if (playerOne.point === true){
+			// 	riadok++;
+			// }
+
+			// let N=document.createElement("TR");
+			// N.setAttribute("id","mytr"+(riadok));
+			// document.getElementById("table1N").appendChild(N);
+			
+
 
 			let y = document.createElement("TD");
+			y.setAttribute("class", "resultElement");
 			let t = document.createElement("IMG");
 			t.setAttribute("src", swap.src);
 			y.appendChild(t);
-			document.getElementById("mytr"+playerOne.point).appendChild(y);
+			// document.getElementById("mytr"+(riadok)).appendChild(y);
+			document.getElementById("table1N").appendChild(y);
 
 			playerOne.point++;
 			console.log("point to "+playerOne.name+"with points "+playerOne.point);
 		}else{
-			alert("point to "+playerTwo.name);
+			//alert("point to "+playerTwo.name);
 
 			let swap2=document.getElementById(memoryid);
 
-			let N2=document.createElement("TR");
-			N2.setAttribute("id","mytr2"+playerTwo.point);
-			document.getElementById("table2N").appendChild(N2);
+			// let N2=document.createElement("TR");
+			// N2.setAttribute("id","mytr2"+playerTwo.point);
+			// document.getElementById("table2N").appendChild(N2);
 
 			let y2 = document.createElement("TD");
+			y2.setAttribute("class", "resultElement");
 			let t2 = document.createElement("IMG");
 			t2.setAttribute("src", swap2.src);
 			y2.appendChild(t2);
-			document.getElementById("mytr2"+playerTwo.point).appendChild(y2);
+			// document.getElementById("mytr2"+playerTwo.point).appendChild(y2);
+			document.getElementById("table2N").appendChild(y2);
 
 			playerTwo.point++;
 			console.log("point to "+playerTwo.name+"with points "+playerTwo.point);
@@ -215,6 +223,7 @@ function match(event) {
 	repaint();			//PREKRESLI HRACIE POLE
 
 }
+
 function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
 	clearBoard();
 	document.getElementById("placeForCard").innerHTML="";
@@ -307,10 +316,7 @@ function createNameTables(){
 	y.appendChild(t);
 	document.getElementById("mytr").appendChild(y);
 	
-
-
-
-
+	
 
 
 	let table2N=document.createElement("TABLE");
