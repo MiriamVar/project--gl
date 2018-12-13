@@ -12,26 +12,35 @@ body {
    overflow: hidden;
    letter-spacing: 0.3em;
 }
-
+/*
 .navbar-brand.navbar-text.text-warning.h1{
-   margin-left: 30px;
-  }
+  /* margin-left: 8%;
+  } 
+*/
 
 .navbar.navbar-expand-lg{
-   height: 70px;
+  height: 70px;
   background: rgba(0,0,0,0);
 }
 
 .navbar-nav {
    margin-left: 990px;
 }
+.navbar-header{
+  width: 30%;
+}
 
 .ahref {
-   color: rgb(255, 193, 7);
+   color: rgb(250,247,60);
+   background-color: rgba(0,0,0,.6);
+   padding: 3%;
+   margin: 1%;
+   border-radius: 7%;
+   
 }
 
 .ahref:hover {
-   color: yellow;
+   color: rgb(250,247,60,0.6);
    text-decoration: none;
 }
 
@@ -46,7 +55,8 @@ body {
    margin-top: 1%;
    margin-bottom: 1%;
    width:51%;
-   background: grey;
+   background: rgba(158,157,120,.3);
+   border-radius: 2%;
 }
 
 #center {
@@ -66,7 +76,7 @@ body {
    margin-top: 12%;
    margin-right: 3%;
    width:15%;
-   background: rgba(233, 200, 50, 0.219);
+   background: rgba(250,247,60,.6);
    visibility: hidden;
    border-radius: 12%;
 }
@@ -76,7 +86,7 @@ body {
    width:15%;
    margin-top: 12%;
    margin-left: 3%;
-   background: grey;
+   background-color: rgb(250,247,60,.3);
 }
 
 .boardElement{
@@ -97,7 +107,7 @@ body {
 }
 
 .boardElement:hover {
-   border:3px solid #e9bd2c;
+   border:3px solid rgb(250,247,60);
    border-radius: 12%;
    float: left;
    height: 105px;
@@ -122,20 +132,20 @@ body {
    color: rgba(0,0,0,.6);
 }
 
-#btnP {
-   padding: 14px 20px;
-   margin: 8px 0;
-   background-color: rgb(240,173,78);
-   color: black;
-   border: none;
-}
-
 #containerNames{
    margin-top: 12%;
 }
 
+#btnP {
+   padding: 14px 20px;
+   margin: 8px 0;
+   background-color: rgb(250,247,60);
+   color: black;
+   border: none;
+}
+
 #btnP:hover {
-   background-color: #FDED2A;
+   background-color: rgb(250,247,60,.9);
    color: #262417;
 }
 
@@ -154,7 +164,7 @@ body {
 }
 
 #table1N #mytr td:first-child{
-   background-color: rgb(241, 238, 19);
+   background-color: rgb(250,247,60);
    column-span: all;
    width: 100%;
    text-align: center;
@@ -192,7 +202,7 @@ body {
   position: absolute;
   left: 30%;
   background-color: rgba(0,0,0, 0.6);
-  color: rgb(255, 77, 166);
+  color: rgb(250,247,60);
   padding: 5%;
   margin-top: 8%;
 }
@@ -201,6 +211,7 @@ body {
   margin: auto;
   margin-right: 15%;
   margin-left: 20%;
+  background-color: rgb(250,247,60);
 }
 
 #winn{
@@ -209,6 +220,10 @@ body {
 
 #containerNames{
   margin-top: 12%;
+}
+
+#pexGame{
+  background-color: rgb(250,247,60);
 }
 
 @media screen and (max-width: 800px) {
