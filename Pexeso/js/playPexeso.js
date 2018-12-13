@@ -112,6 +112,7 @@ function resetVars() { // FUNKCOA, RESETUJE PREMENNE
 	playerTwo.turn=!playerTwo.turn;	//zneguje jeho hodnotu aby mohol ist dalsi hrac
 
 }
+
 let winner;
 function match(event) {
 
@@ -126,6 +127,29 @@ function match(event) {
 
 	clicker++;			//POCITADLO KLIKOV
 
+		if(playerOne.turn == true){
+			let nameOne = document.getElementById("nameOne");
+			nameOne.style.border = "";
+			nameOne.style.borderRadius = "12px";
+			nameOne.style.backgroundColor = "rgb(197, 31, 147, 1)";
+
+			nameTwo.style.border = "thick solid rgb(255, 255, 255, 0.4)";
+			nameTwo.style.borderRadius = "12px";
+			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 0)";
+		//	nameTwo.style.borderRadius = "";
+		
+		}else{
+			let nameTwo = document.getElementById("nameTwo");
+			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 1)";
+			nameTwo.style.border = "";
+			nameTwo.style.borderRadius = "12px";
+
+			nameOne.style.border = "thick solid rgb(255, 255, 255, 0.4)";
+			nameOne.style.borderRadius = "12px";
+			nameOne.style.backgroundColor = "rgb(197, 31, 147, 0)";
+		//	nameOne.style.borderRadius = "";
+
+		}
 
 	if (memoryname == null && memoryid == null) {   //PRVA ULOZENIE ABY BOLO S CIM POROVNAVAT MENO A ID
 		memoryname = event.target.name;
@@ -159,8 +183,7 @@ function match(event) {
 			// let N=document.createElement("TR");
 			// N.setAttribute("id","mytr"+(riadok));
 			// document.getElementById("table1N").appendChild(N);
-			
-
+			flickerMatch("nameOne");
 
 			let y = document.createElement("TD");
 			y.setAttribute("class", "resultElement");
@@ -180,6 +203,8 @@ function match(event) {
 			// let N2=document.createElement("TR");
 			// N2.setAttribute("id","mytr2"+playerTwo.point);
 			// document.getElementById("table2N").appendChild(N2);
+
+			flickerMatch("nameTwo");
 
 			let y2 = document.createElement("TD");
 			y2.setAttribute("class", "resultElement");
@@ -312,6 +337,7 @@ function createNameTables(){
 	document.getElementById("table1N").appendChild(N);
 
 	let y = document.createElement("TD");
+	y.setAttribute("id","nameOne");
 	let t = document.createTextNode(playerOne.name);
 	y.appendChild(t);
 	document.getElementById("mytr").appendChild(y);
@@ -329,6 +355,7 @@ function createNameTables(){
 
 
 	let  y2 = document.createElement("TD");
+	y2.setAttribute("id","nameTwo");
 	let  t2 = document.createTextNode(playerTwo.name);
 	y2.appendChild(t2);
 	document.getElementById("mytr2").appendChild(y2);
@@ -336,4 +363,32 @@ function createNameTables(){
 }
 function reloading() {
     location.reload();
+}
+
+
+//toto dolu je cisto na to blikanie pre hraca ktory najde par
+
+let index=0;
+let inter;
+function flickerMatch(id){
+	inter = setInterval(flick, 100, document.getElementById(id));
+	index=0;
+
+}
+
+function flick(nameCH){
+  nameCH.style.backgroundColor = getColor();
+  if(index===6){    //PO 6 BLIKOCH VYPNUT 
+     clearInterval(inter);
+
+    }
+}
+
+function getColor () {
+     index++;
+    if(index%2===0){
+        return "rgb(247, 167, 54, .5)";
+    }else{
+        return "rgb(247, 167, 54, 1)";
+    }
 }
