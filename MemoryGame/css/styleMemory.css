@@ -132,16 +132,16 @@ body {
    color: rgba(0,0,0,.6);
 }
 
+#containerNames{
+   margin-top: 12%;
+}
+
 #btnP {
    padding: 14px 20px;
    margin: 8px 0;
    background-color: rgb(250,247,60);
    color: black;
    border: none;
-}
-
-#containerNames{
-   margin-top: 12%;
 }
 
 #btnP:hover {
