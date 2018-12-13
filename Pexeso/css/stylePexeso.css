@@ -255,21 +255,29 @@ body {
 
 #endGame{
   position: absolute;
-  left: 25%;
+  left: 30%;
   background-color: rgba(0,0,0, 0.6);
-  color: rgb(255, 77, 166);
+  color: rgb(201, 160, 200);
   padding: 5%;
   margin-top: 8%;
+  border-radius: 5%;
 }
 
 #newGame{
   margin: auto;
   margin-right: 15%;
   margin-left: 20%;
+  background-color: rgb(201, 160, 200);
+  border: none;
 }
 
 #winn{
   padding-bottom: 3%;
+}
+
+#memGame{
+  background-color: rgb(201, 160, 200);
+  border: none;
 }
 
 #containerNames{

@@ -205,6 +205,7 @@ body {
   color: rgb(250,247,60);
   padding: 5%;
   margin-top: 8%;
+  border-radius: 5%;
 }
 
 #newGame{
@@ -212,6 +213,7 @@ body {
   margin-right: 15%;
   margin-left: 20%;
   background-color: rgb(250,247,60);
+  border: none;
 }
 
 #winn{
@@ -224,6 +226,7 @@ body {
 
 #pexGame{
   background-color: rgb(250,247,60);
+  border: none;
 }
 
 @media screen and (max-width: 800px) {
