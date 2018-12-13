@@ -142,11 +142,6 @@ let winner;
 function match(event) {
 
 	//console.log('menim data (pole gameboard)');
-	if (clicker == 2) { 				//RESTART PO 2 KLIKOCH AKO KOLO
-		resetVars();
-		resetFlip();
-	}
-
 	flipCard(event.target.id);
 	//console.log(gameboard);
 
@@ -249,6 +244,12 @@ function match(event) {
 
 	}
 	repaint();			//PREKRESLI HRACIE POLE
+
+	if (clicker == 2) { 				//RESTART PO 2 KLIKOCH AKO KOLO
+		resetVars();
+		resetFlip();
+		setTimeout(repaint,800);
+	}
 
 }
 
