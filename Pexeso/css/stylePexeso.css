@@ -269,6 +269,16 @@ body {
   margin-left: 20%;
   background-color: rgb(201, 160, 200);
   border: none;
+  border-radius: 12%;
+}
+
+#newGame:hover{
+  margin: auto;
+  margin-right: 15%;
+  margin-left: 20%;
+  background-color: #c51f93;
+  border: none;
+  border-radius: 12%;
 }
 
 #winn{
@@ -278,6 +288,13 @@ body {
 #memGame{
   background-color: rgb(201, 160, 200);
   border: none;
+  border-radius: 12%;
+}
+
+#memGame:hover{
+  background-color: #c51f93;
+  border: none;
+  border-radius: 12%;
 }
 
 #containerNames{

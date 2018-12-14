@@ -274,25 +274,6 @@ function restart() {
 	document.getElementById("endGame").innerHTML="";
 }
 
-function create2() {
-	clearBoard();
-	createGameboard();
-	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
-	for (i = 0; i < gameboard.length; i++) {
-		let x = document.createElement("IMG");
-		x.setAttribute("src", "../img/kosice/" + i + ".JPG");
-		x.setAttribute("id", gameboard[i].id);
-		x.setAttribute("name", gameboard[i].name);
-		x.setAttribute("onclick", "match(event)");
-		let y = document.createElement("DIV");
-		y.setAttribute("id", "board"+i);
-		y.setAttribute("class", "boardElement");
-		document.getElementById("gameBoard").appendChild(y);
-		document.getElementById("board"+i).appendChild(x);
-	}
-
-}
-
 function start() {				//pri nacitani stranky
 	document.getElementById("container").style.visibility="hidden";
 	shuffle();
