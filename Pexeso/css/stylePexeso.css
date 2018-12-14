@@ -10,7 +10,7 @@ body {
   height: 100vh;
   z-index: -10;
   overflow: hidden;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
 }
 
 .navbar-brand.navbar-text.text-warning.h1{
@@ -113,7 +113,7 @@ body {
   margin-top: 1%;
   margin-bottom: 1%;
   width:52%;
-  background: rgba(221, 201, 201, 0.671); 
+  background: rgba(221, 201, 201, 0.671);
   padding-left: 1%;
   border-radius: 2%;
 
@@ -132,7 +132,7 @@ body {
   margin-top: 12%;
   margin-right: 3%;
   width:15%;
-  background: rgba(221, 201, 201, 0.671);  
+  background: rgba(221, 201, 201, 0.671);
 }
 
 #center {
@@ -147,7 +147,7 @@ body {
     float: left;
     /* height: 105px;
     width: 105px; */
-/* 
+/*
     width: 15%;
     height: 24%; */
 
@@ -255,21 +255,29 @@ body {
 
 #endGame{
   position: absolute;
-  left: 25%;
+  left: 30%;
   background-color: rgba(0,0,0, 0.6);
-  color: rgb(255, 77, 166);
+  color: rgb(201, 160, 200);
   padding: 5%;
   margin-top: 8%;
+  border-radius: 5%;
 }
 
 #newGame{
   margin: auto;
   margin-right: 15%;
   margin-left: 20%;
+  background-color: rgb(201, 160, 200);
+  border: none;
 }
 
 #winn{
   padding-bottom: 3%;
+}
+
+#memGame{
+  background-color: rgb(201, 160, 200);
+  border: none;
 }
 
 #containerNames{
@@ -281,4 +289,3 @@ body {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
-

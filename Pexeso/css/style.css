@@ -5,9 +5,6 @@ body {
 p {
   font-size: 17px;
 }
-/* .column{
-  align: center;
-} zakomentovane, lebo align neexistuje!*/
 .myNav {
   background-image: url('../img/bcover.jpg');
   background-size: 100% 100%;
@@ -18,7 +15,7 @@ p {
   bottom: 0;
   height: 100vh;
   z-index: -10;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
 }
 .navbar-brand.navbar-text.text-warning.h1{
   margin-left: 30px;
@@ -38,9 +35,6 @@ p {
 }
 
 
-/* background: rgba(107,107,102,.4); warning color */
-
-
 #leftContent, #rightContent {
   background: rgba(247,167,54,.6);
   padding: 30px;
@@ -49,11 +43,10 @@ p {
   margin-top: 250px;
   display: inline-block;
   font-size: 46px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
   color: rgb(61, 61, 41);
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-
 }
 
 div#leftContent:hover, div#rightContent:hover {
@@ -61,6 +54,7 @@ div#leftContent:hover, div#rightContent:hover {
   color: rgb(0, 0, 0);
   font-style: bold;
 }
+
 
 #leftContent {
   margin-left: 23%;
@@ -71,8 +65,7 @@ div#leftContent:hover, div#rightContent:hover {
   margin-right: auto;
   margin-left: 100px;
 }
-
-/* 
+/*
 #leftContent, #rightContent {
   background: rgba(0,0,0,.6);
   padding: 30px;
@@ -111,7 +104,7 @@ div#leftContent:hover, div#rightContent:hover {
     padding-top: 70px;
     padding-bottom: 70px;
     font-size: 17px;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.2em;
 }
 .bg-1 {
     background-color: #191919; /* black */
@@ -138,21 +131,3 @@ div#leftContent:hover, div#rightContent:hover {
     width: 106%;
     height: 125%;
 }
-
-/*adding media*/
-@media screen and (max-width: 800px) {
-  .left, .main, .right {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-}
-}
-
-
-/*footer a {
-    color: #f5f5f5;
-}
-footer a:hover {
-    color: #777;
-    text-decoration: none;
-}
-
-/*social pull-right

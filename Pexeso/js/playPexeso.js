@@ -142,17 +142,10 @@ let winner;
 function match(event) {
 
 	//console.log('menim data (pole gameboard)');
-	if (clicker == 2) { 				//RESTART PO 2 KLIKOCH AKO KOLO
-		resetVars();
-		resetFlip();
-	}
-
 	flipCard(event.target.id);
 	//console.log(gameboard);
 
 	clicker++;			//POCITADLO KLIKOV
-
-	changePlayerColor(playerOne.turn);
 
 	if (memoryname == null && memoryid == null) {   //PRVA ULOZENIE ABY BOLO S CIM POROVNAVAT MENO A ID
 		memoryname = event.target.name;
@@ -249,6 +242,13 @@ function match(event) {
 
 	}
 	repaint();			//PREKRESLI HRACIE POLE
+
+	if (clicker == 2) { 				//RESTART PO 2 KLIKOCH AKO KOLO
+		resetVars();
+		resetFlip();
+		setTimeout(repaint,800);
+		setTimeout(changePlayerColor,800,playerOne.turn);
+	}
 
 }
 
