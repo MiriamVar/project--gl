@@ -129,7 +129,7 @@ function redraw(){
     else{
     gameState.timer.innerHTML = Math.floor((gameState.ticks) / 60)+" : "+((gameState.ticks) % 60);
     }
-    gameState.clicker.innerHTML = "Score: " + (gameState.score/(gameState.clicks/2)).toFixed(3) + "   Clicks: "+gameState.clicks;
+    gameState.clicker.innerHTML = "Score: " + (gameState.score/(gameState.clicks/2)).toFixed(3) + "<br>"+"Clicks: "+gameState.clicks;
     if (gameState.score == 10) {
       clearInterval(time);
       gameState.clicker.style = "color: green";
@@ -168,8 +168,9 @@ let resultElementCount=0;
       setTimeout(function() { //inac sa pretocia
         gameBoard[element].flip();
         gameBoard[mem].flip();
-      }, 800);
+      }, 800); 
     }
+    //CardFlip().disabled=true;
 
     if (resultElementCount==12) {
       setTimeout(function(){
