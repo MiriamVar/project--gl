@@ -10,12 +10,12 @@ body {
    height: 100vh;
    z-index: -10;
    overflow: hidden;
-   letter-spacing: 0.3em;
+   letter-spacing: 0.2em;
 }
 /*
 .navbar-brand.navbar-text.text-warning.h1{
   /* margin-left: 8%;
-  } 
+  }
 */
 
 .navbar.navbar-expand-lg{
@@ -31,12 +31,12 @@ body {
 }
 
 .ahref {
-   color: rgb(250,247,60);
+   color: rgb(255,219,73);
    background-color: rgba(0,0,0,.6);
    padding: 3%;
    margin: 1%;
    border-radius: 7%;
-   
+
 }
 
 .ahref:hover {
@@ -54,7 +54,7 @@ body {
    display: inline-block;
    margin-top: 1%;
    margin-bottom: 1%;
-   width:51%;
+   width:48%;
    background: rgba(158,157,120,.3);
    border-radius: 2%;
 }
@@ -139,7 +139,7 @@ body {
 #btnP {
    padding: 14px 20px;
    margin: 8px 0;
-   background-color: rgb(250,247,60);
+   background-color: rgb(255,219,73);
    color: black;
    border: none;
 }
@@ -164,7 +164,7 @@ body {
 }
 
 #table1N #mytr td:first-child{
-   background-color: rgb(250,247,60);
+   background-color: rgb(255, 219, 73);
    column-span: all;
    width: 100%;
    text-align: center;
@@ -205,6 +205,7 @@ body {
   color: rgb(250,247,60);
   padding: 5%;
   margin-top: 8%;
+  border-radius: 5%;
 }
 
 #newGame{
@@ -212,6 +213,7 @@ body {
   margin-right: 15%;
   margin-left: 20%;
   background-color: rgb(250,247,60);
+  border: none;
 }
 
 #winn{
@@ -224,6 +226,7 @@ body {
 
 #pexGame{
   background-color: rgb(250,247,60);
+  border: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -231,4 +234,3 @@ body {
    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
 }
 }
-
