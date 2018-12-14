@@ -29,6 +29,11 @@ p {
   margin-left: 70%;
 }
 
+.collapse .navbar-collapse{
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
 
 #leftContent, #rightContent {
   background: rgba(247,167,54,.6);
@@ -52,7 +57,7 @@ div#leftContent:hover, div#rightContent:hover {
 
 
 #leftContent {
-  margin-left: 25%;
+  margin-left: 23%;
   margin-right: auto;
 }
 

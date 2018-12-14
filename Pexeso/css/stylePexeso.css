@@ -31,7 +31,7 @@ body {
 }
 
 .ahref {
-  color: #c51f93;
+  color: rgb(201, 160, 200);
   background-color: rgba(0,0,0,.6);
   padding: 3%;
   margin: 1%;
@@ -39,7 +39,7 @@ body {
   /* font-size: 24px; */
 }
 .ahref:hover {
-  color: rgb(201, 160, 200);
+  color: #c51f93;
   text-decoration: none;
 }
 /*.nav-link {
