@@ -214,7 +214,10 @@ let resultElementCount=0;
     button = document.getElementById('btnP');
     button.addEventListener("click", event => {			//buttonu na posielanie mien prida akoby funkciu pri kliknuti na neho
       if(document.getElementById("P1").value ===""){
-        return;
+        document.getElementById("wrongInputs").innerHTML="You have to enter name.";
+      }
+      else if (document.getElementById("P1").value.length > 10) {
+      document.getElementById("wrongInputs").innerHTML="Your name can contain max. 10 characters.";
       }
       else{
         names();
