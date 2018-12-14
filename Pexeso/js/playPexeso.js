@@ -147,8 +147,6 @@ function match(event) {
 
 	clicker++;			//POCITADLO KLIKOV
 
-	changePlayerColor(playerOne.turn);
-
 	if (memoryname == null && memoryid == null) {   //PRVA ULOZENIE ABY BOLO S CIM POROVNAVAT MENO A ID
 		memoryname = event.target.name;
 		memoryid = event.target.id;
@@ -249,6 +247,7 @@ function match(event) {
 		resetVars();
 		resetFlip();
 		setTimeout(repaint,800);
+		setTimeout(changePlayerColor,800,playerOne.turn);
 	}
 
 }
