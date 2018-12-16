@@ -3,12 +3,11 @@
 <head>
 	<title>Pexeso</title>
 	<meta charset="utf-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="../js/playPexeso.js"></script>
     <meta name="viewport" content="width=device-width initial-scale=1.0 shrink-to-fit=0">
     <!--connecting with css-->
     <link rel="stylesheet" href="../css/stylePexeso.css">
-    <link rel="shortcut icon" href="../img/iconEmpty.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/iconEmpty1.ico" type="image/x-icon">
     <!--connecting with bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
@@ -16,25 +15,36 @@
 <div class="myNav">
   <nav class="navbar navbar-expand-lg">
 	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarHome">
-        	<span class="icon-bar"></span>
-		<a href="../index.html"><span class="glyphicon glyphicon-home">Memo Game</span></a>
+    <span class="icon-bar"></span>
+		<a href="../index.html" class="ahref"><span class="glyphicon glyphicon-home">memexo</span></a>
 		</button>
 	</div>
    </nav>
 </div>
-<br/> <br/> <br/> <br/> <br/> <br/>
 <div id="containerNames">
-  <div id="inputNames">
-      <div id="inputNames">
-            <label> Player 1 </label>
-              <input placeholder="Enter name of player 1." id="P1" type="text">
-            <label> Player 2 </label>
-              <input placeholder="Enter name of player 2." id="P2" type="text">
-            <input type="button" value="Enter" id="btnP">
-      </div>
+<div id="inputName">
+    <label> Player 1 </label>
+    <input placeholder="Enter name of player 1." id="P1" type="text">
+    <label> Player 2 </label>
+    <input placeholder="Enter name of player 2." id="P2" type="text">
+    <input type="button" value="Enter" id="btnP">
+    <label id="wrongInputs"></label>
+    </div>
 	</div>
+
+	<div class="myNav">
+  <div class="collapse navbar-collapse">
+		<ul class="navbar-nav">
+    </ul>
+  </div>
+</nav>
+
+<div id="endGame" style="visibility: hidden;">
+  <div id="winn"></div>
+  <button id="newGame" onclick="reloading()" >New game</button>
+  <a href="../../MemoryGame/memoryGame.html"><button id="memGame">Memory game</button></a>
 </div>
+<div id="placeForCard"></div>
 
 <div id="container">
    <div id="left"></div>
@@ -44,7 +54,5 @@
    <div id="right"></div>
 </div>
 
-<div id="endGame"></div>
-<div id="placeForCard"></div>
 </body>
 </html>

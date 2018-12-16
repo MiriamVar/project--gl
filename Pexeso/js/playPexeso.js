@@ -9,6 +9,35 @@ let playerTwo = {
 				point:0
 }
 
+let enableFunc=true;
+
+function changePlayerColor(turn){
+
+
+	if(turn == true){
+			let nameOne = document.getElementById("nameOne");
+			nameOne.style.border = "thick solid rgba(6, 19, 77, 1)";
+			nameOne.style.borderRadius = "12px";
+			nameOne.style.backgroundColor = "rgba(197, 31, 147, 1)";
+
+			nameTwo.style.border = "thick solid rgba(255, 255, 255, 0.4)";
+			nameTwo.style.borderRadius = "12px";
+			nameTwo.style.backgroundColor = "rgba(6, 19, 77, 0)";
+		//	nameTwo.style.borderRadius = "";
+		
+		}else{
+			let nameTwo = document.getElementById("nameTwo");
+			nameTwo.style.backgroundColor = "rgba(6, 19, 77, 1)";
+			nameTwo.style.border = "thick solid rgba(197, 31, 147, 1)";
+			nameTwo.style.borderRadius = "12px";
+
+			nameOne.style.border = "thick solid rgba(255, 255, 255, 0.4)";
+			nameOne.style.borderRadius = "12px";
+			nameOne.style.backgroundColor = "rgba(197, 31, 147, 0)";
+		//	nameOne.style.borderRadius = "";
+
+		}
+}
 
 // napevno nie
 let sizeX = 6;
@@ -112,42 +141,19 @@ function resetVars() { // FUNKCOA, RESETUJE PREMENNE
 	playerTwo.turn=!playerTwo.turn;	//zneguje jeho hodnotu aby mohol ist dalsi hrac
 
 }
+
 let winner;
 function match(event) {
 
-	//console.log('menim data (pole gameboard)');
-	if (clicker == 2) { 				//RESTART PO 2 KLIKOCH AKO KOLO
-		resetVars();
-		resetFlip();
-	}
 
+	if(enableFunc===true){
+
+
+	//console.log('menim data (pole gameboard)');
 	flipCard(event.target.id);
 	//console.log(gameboard);
 
 	clicker++;			//POCITADLO KLIKOV
-
-
-
-
-	if(playerOne.turn==true){
-
-
-		document.getElementById("leftPointer").setAttribute("src","../img/arrowR.png");
-		document.getElementById("rightPointer").setAttribute("src","");
-
-
-	}
-		else{
-
-
-		document.getElementById("rightPointer").setAttribute("src","../img/arrowL.png");
-		document.getElementById("leftPointer").setAttribute("src","");
-
-	}
-
-
-
-
 
 	if (memoryname == null && memoryid == null) {   //PRVA ULOZENIE ABY BOLO S CIM POROVNAVAT MENO A ID
 		memoryname = event.target.name;
@@ -160,7 +166,6 @@ function match(event) {
 		if (countcardT == 0) {
 			countcardT++;
 		}
-
 	}
 
 	if ((memoryname == event.target.name) && memoryid == event.target.id) { //AK tukol na tu istu kartu ako predtym
@@ -169,39 +174,52 @@ function match(event) {
 	}
 
 	if ((countcardT + countcardF) == 2) {    //AK NA DRUHY KLIK NASIEL DVE ROZDIELNE KARTY Z ROVNAKEHO PARU TAK NASIEL CELY PAR
-
+		let riadok=0;
 		if(playerOne.turn==true){			//ten hrac ktory teraz hra a sa nasiel par dostane bod
-			alert("point to "+playerOne.name);
+			//alert("point to "+playerOne.name);
 
 			let swap=document.getElementById(memoryid);
 
-			let N=document.createElement("TR");
-			N.setAttribute("id","mytr"+playerOne.point);
-			document.getElementById("table1N").appendChild(N);
+			// if (playerOne.point === true){
+			// 	riadok++;
+			// }
+
+			// let N=document.createElement("TR");
+			// N.setAttribute("id","mytr"+(riadok));
+			// document.getElementById("table1N").appendChild(N);
+			flickerMatch("nameOne");
 
 			let y = document.createElement("TD");
+			y.setAttribute("class", "resultElement");
 			let t = document.createElement("IMG");
 			t.setAttribute("src", swap.src);
 			y.appendChild(t);
-			document.getElementById("mytr"+playerOne.point).appendChild(y);
+			// document.getElementById("mytr"+(riadok)).appendChild(y);
+			document.getElementById("table1N").appendChild(y);
 
 			playerOne.point++;
+			console.log("point to "+playerOne.name+"with points "+playerOne.point);
 		}else{
-			alert("point to "+playerTwo.name);
+			//alert("point to "+playerTwo.name);
 
 			let swap2=document.getElementById(memoryid);
 
-			let N2=document.createElement("TR");
-			N2.setAttribute("id","mytr2"+playerTwo.point);
-			document.getElementById("table2N").appendChild(N2);
+			// let N2=document.createElement("TR");
+			// N2.setAttribute("id","mytr2"+playerTwo.point);
+			// document.getElementById("table2N").appendChild(N2);
+
+			flickerMatch("nameTwo");
 
 			let y2 = document.createElement("TD");
+			y2.setAttribute("class", "resultElement");
 			let t2 = document.createElement("IMG");
 			t2.setAttribute("src", swap2.src);
 			y2.appendChild(t2);
-			document.getElementById("mytr2"+playerTwo.point).appendChild(y2);
+			// document.getElementById("mytr2"+playerTwo.point).appendChild(y2);
+			document.getElementById("table2N").appendChild(y2);
 
 			playerTwo.point++;
+			console.log("point to "+playerTwo.name+"with points "+playerTwo.point);
 		}
 
 		playerOne.turn=!playerOne.turn;		//obrati znova false a true aby ked to pojde resetVars zostal hrat ten ktory nasiel par
@@ -219,28 +237,44 @@ function match(event) {
 
 		if((playerOne.point+playerTwo.point)==(sizeX*sizeY)/2){
 			if(playerOne.point>playerTwo.point){
-				winner=playerOne.name;
-			}else if (playerOne<playerTwo){
-				winner=playerTwo.name;
+				winner="Winner of the game is: "+playerOne.name;
+			}else if (playerOne.point<playerTwo.point){
+				winner="Winner of the game is: "+playerTwo.name;
 			}
 			else{
-				winner=playerOne.name +"and"+ playerTwo.name;
+				winner="This game ended with a draw.";
 			}
 			end();
+			return;
 		}
 
 	}
 	repaint();			//PREKRESLI HRACIE POLE
 
+	if (clicker == 2) { 				//RESTART PO 2 KLIKOCH AKO KOLO
+		resetVars();
+		resetFlip();
+		setTimeout(repaint,800);
+		setTimeout(changePlayerColor,800,playerOne.turn);
+		enableFunc=false;
+		setTimeout(function(){ enableFunc=true; }, 800);
+	}
+
+
 }
+
+	
+
+}
+
 function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
 	clearBoard();
-	document.getElementById("endGame").innerHTML="Gameover";
 	document.getElementById("placeForCard").innerHTML="";
 	playerOne.point=0;
 	playerTwo.point=0;
-	alert("winner is "+winner);
-
+	document.getElementById("container").style.visibility="hidden";
+	document.getElementById("endGame").style.visibility="visible";
+	document.getElementById("winn").innerHTML= "<h1 id='winn'>"+winner+"</h1>";	
 }
 
 function clearBoard(elementID) {
@@ -255,48 +289,35 @@ function restart() {
 	document.getElementById("endGame").innerHTML="";
 }
 
-function create2() {
-	clearBoard();
-	createGameboard();
-	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
-	for (i = 0; i < gameboard.length; i++) {
-		let x = document.createElement("IMG");
-		x.setAttribute("src", "../img/kosice/" + i + ".JPG");
-		x.setAttribute("id", gameboard[i].id);
-		x.setAttribute("name", gameboard[i].name);
-		x.setAttribute("onclick", "match(event)");
-		let y = document.createElement("DIV");
-		y.setAttribute("id", "board"+i);
-		y.setAttribute("class", "boardElement");
-		document.getElementById("gameBoard").appendChild(y);
-		document.getElementById("board"+i).appendChild(x);
-	}
-
-}
-
 function start() {				//pri nacitani stranky
 	document.getElementById("container").style.visibility="hidden";
 	shuffle();
 	button = document.getElementById('btnP');
 	button.addEventListener("click", event => {			//buttonu na posielanie mien prida akoby funkciu pri kliknuti na neho
 		if(document.getElementById("P1").value ==="" || document.getElementById("P2").value ===""){
-			return;
+			document.getElementById("wrongInputs").innerHTML="You have to enter both names.";
 		}
-		else{
+		else if (document.getElementById("P1").value.length > 10 || document.getElementById("P2").value.length >10) {
+			document.getElementById("wrongInputs").innerHTML="Your name can contain max. 10 characters.";
+		}
+		else {
 			names();
 			createNameTables();
+			changePlayerColor(true);
 			document.getElementById("gameBoard").innerHTML="";
 			document.getElementById("container").style.visibility="visible";
 			document.getElementById("containerNames").innerHTML="";
+			document.getElementById("containerNames").style.marginTop="0%";
 			create();
-
 		}
     });
-
 }
 
 let button;
 
+// if(playerOne.name.length>10){
+// 		alert("long name");
+// 	}
 function names(){
 	playerOne.name=document.getElementById("P1").value;
 	playerTwo.name=document.getElementById("P2").value;
@@ -321,21 +342,12 @@ function createNameTables(){
 	document.getElementById("table1N").appendChild(N);
 
 	let y = document.createElement("TD");
-	let t = document.createElement("IMG");
-	t.setAttribute("id","leftPointer");
-	t.setAttribute("src", "../img/arrowR.png");
-	y.appendChild(t);
-	document.getElementById("mytr").appendChild(y);
-
-	y = document.createElement("TD");
-	t = document.createTextNode(playerOne.name);
+	y.setAttribute("id","nameOne");
+	let t = document.createTextNode(playerOne.name);
 	y.appendChild(t);
 	document.getElementById("mytr").appendChild(y);
 	
-
-
-
-
+	
 
 
 	let table2N=document.createElement("TABLE");
@@ -348,20 +360,49 @@ function createNameTables(){
 
 
 	let  y2 = document.createElement("TD");
+	y2.setAttribute("id","nameTwo");
 	let  t2 = document.createTextNode(playerTwo.name);
 	y2.appendChild(t2);
 	document.getElementById("mytr2").appendChild(y2);
 
-	y2 = document.createElement("TD");
-	y2 = document.createElement("TD");
-	t2 = document.createElement("IMG");
-	t2.setAttribute("id","rightPointer");
-	t2.setAttribute("src", "");
-	y2.appendChild(t2);
-	document.getElementById("mytr2").appendChild(y2);
+}
+function reloading() {
+    location.reload();
+}
 
 
+//toto dolu je cisto na to blikanie pre hraca ktory najde par
 
+let index=0;
+let inter;
+function flickerMatch(id){
+	inter = setInterval(flick, 100, document.getElementById(id), id);
+	index=0;
 
 }
 
+function flick(nameCH, idForColor){
+  nameCH.style.backgroundColor = getColor(idForColor);
+  if(index===17){    //PO 6 BLIKOCH VYPNUT 
+     clearInterval(inter);
+
+    }
+}
+
+function getColor (idForColor) {
+     index++;
+
+    if (idForColor === "nameOne") {
+    	if(index%2===0){
+        	return "rgb(197, 31, 147, .5)";
+    	}else{
+        	return "rgb(197, 31, 147, 1)";
+    	}
+    }else{
+    	if(index%2===0){
+        	return "rgb(6, 19, 77, .5)";
+    	}else{
+        	return "rgb(6, 19, 77, 1)";
+    	}
+    }
+}

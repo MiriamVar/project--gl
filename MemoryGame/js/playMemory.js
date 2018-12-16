@@ -59,13 +59,18 @@ class Card {
  }
 
  function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
-	restart();
-	document.getElementById("endGame").innerHTML="Gameover";
-	document.getElementById("placeForCard").innerHTML="";
-	playerOne.point=0;
-	alert("Your score is: "+ (gameState.score/(gameState.clicks/2)).toFixed(3));
-}
-
+    restart();
+    document.getElementById("placeForCard").innerHTML="";
+    playerOne.point=0;
+    document.getElementById("container").style.visibility="hidden";
+    document.getElementById("endGame").style.visibility="visible";
+    document.getElementById('time').style.visibility="hidden";
+    let winScore=(gameState.score/(gameState.clicks/2)).toFixed(3);
+    console.log(winScore);
+    document.getElementById("winn").innerHTML= "<h1 id='winn'> Your score is: "+(winScore*1000)+"</h1>";
+    //alert("Your score is: "+ (gameState.score/(gameState.clicks/2)).toFixed(3));
+  }
+	
  function CardFlip(index){
   if (gameBoard[index].flipped) {
     return;
@@ -97,11 +102,11 @@ function setup(){
 function restart(){
   clearInterval(time);
   document.getElementById("gameboard").innerHTML="";
-  setup();
   redraw();
 }
 
 function redraw(){
+  document.getElementById('time').style.visibility="visible";
     if (gameState.ticks<10){ //dokoncit cas, nulky atd
       gameState.timer.innerHTML = "0"+Math.floor((gameState.ticks) / 60)+" : "+ "0" +((gameState.ticks) % 60);
     }
@@ -124,7 +129,7 @@ function redraw(){
     else{
     gameState.timer.innerHTML = Math.floor((gameState.ticks) / 60)+" : "+((gameState.ticks) % 60);
     }
-    gameState.clicker.innerHTML = "Score: " + (gameState.score/(gameState.clicks/2)).toFixed(3) + "   Clicks: "+gameState.clicks;
+    gameState.clicker.innerHTML = "Score: " + (gameState.score/(gameState.clicks/2)).toFixed(3) + "<br>"+"Clicks: "+gameState.clicks;
     if (gameState.score == 10) {
       clearInterval(time);
       gameState.clicker.style = "color: green";
@@ -143,9 +148,16 @@ function flipBoard() {
   }, 3000);
   }
 
+let resultElementCount=0;
+
   function match(element, mem){ //function compare
     if (gameBoard[element].src == gameBoard[mem].src){
       gameState.score++;
+      let newElement=document.createElement("IMG");
+      newElement.setAttribute("src", gameBoard[mem].src);
+      newElement.setAttribute("class", "resultElement");
+      document.getElementById("left").appendChild(newElement);
+      resultElementCount++;
       setTimeout(function() { //ak sa zhoduju, tak sa vymaze ich source a uz sa na ne nebude dat klikat
         document.getElementById(gameBoard[element].id).disabled = true;
         document.getElementById(gameBoard[mem].id).disabled = true;
@@ -156,7 +168,15 @@ function flipBoard() {
       setTimeout(function() { //inac sa pretocia
         gameBoard[element].flip();
         gameBoard[mem].flip();
-      }, 800);
+      }, 800); 
+    }
+    //CardFlip().disabled=true;
+
+    if (resultElementCount==12) {
+      setTimeout(function(){
+        end();
+      },800);
+      resultElementCount=0;
     }
   }
 
@@ -164,7 +184,7 @@ function flipBoard() {
   function fillGameBoard() {
     let swap=0;
     for (let i = 0; i < 24; i+=2) {
-      gameBoard[i] = new Card("card" + i, "../MemoryGame/img/kosice/"+(swap)+".JPG", "../Pexeso/img/Slang/empty1.jpg");
+      gameBoard[i] = new Card("card" + i, "../MemoryGame/img/kosice/"+(swap)+".JPG", "../Pexeso/img/Slang/empty1.jpg"); 
       gameBoard[i+1] = new Card("card2" + (i+1), "../MemoryGame/img/kosice/"+(swap)+".JPG", "../Pexeso/img/Slang/empty1.jpg");
       swap++;
     }
@@ -195,7 +215,10 @@ function flipBoard() {
     button = document.getElementById('btnP');
     button.addEventListener("click", event => {			//buttonu na posielanie mien prida akoby funkciu pri kliknuti na neho
       if(document.getElementById("P1").value ===""){
-        return;
+        document.getElementById("wrongInputs").innerHTML="You have to enter name.";
+      }
+      else if (document.getElementById("P1").value.length > 10) {
+      document.getElementById("wrongInputs").innerHTML="Your name can contain max. 10 characters.";
       }
       else{
         names();
@@ -203,6 +226,7 @@ function flipBoard() {
         document.getElementById("gameboard").innerHTML="";
         document.getElementById("container").style.visibility="visible";
         document.getElementById("containerNames").innerHTML="";
+        document.getElementById("containerNames").style.marginTop="0%";
         setup();
   
       }
@@ -229,3 +253,7 @@ function flipBoard() {
     y.appendChild(t);
     document.getElementById("mytr").appendChild(y);
   }
+
+  function reloading() {
+    location.reload();
+}
