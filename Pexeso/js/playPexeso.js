@@ -280,9 +280,12 @@ function start() {				//pri nacitani stranky
 	button = document.getElementById('btnP');
 	button.addEventListener("click", event => {			//buttonu na posielanie mien prida akoby funkciu pri kliknuti na neho
 		if(document.getElementById("P1").value ==="" || document.getElementById("P2").value ===""){
-			return;
+			document.getElementById("wrongInputs").innerHTML="You have to enter both names.";
 		}
-		else{
+		else if (document.getElementById("P1").value.length > 10 || document.getElementById("P2").value.length >10) {
+			document.getElementById("wrongInputs").innerHTML="Your name can contain max. 10 characters.";
+		}
+		else {
 			names();
 			createNameTables();
 			changePlayerColor(true);
@@ -297,6 +300,9 @@ function start() {				//pri nacitani stranky
 
 let button;
 
+// if(playerOne.name.length>10){
+// 		alert("long name");
+// 	}
 function names(){
 	playerOne.name=document.getElementById("P1").value;
 	playerTwo.name=document.getElementById("P2").value;
