@@ -237,12 +237,12 @@ function match(event) {
 
 		if((playerOne.point+playerTwo.point)==(sizeX*sizeY)/2){
 			if(playerOne.point>playerTwo.point){
-				winner="Winner is: "+playerOne.name;
+				winner="Winner of the game is: "+playerOne.name;
 			}else if (playerOne.point<playerTwo.point){
-				winner="Winner is"+playerTwo.name;
+				winner="Winner of the game is: "+playerTwo.name;
 			}
 			else{
-				winner="Winners are: "+playerOne.name +" and "+ playerTwo.name;
+				winner="This game ended with a draw.";
 			}
 			end();
 			return;
