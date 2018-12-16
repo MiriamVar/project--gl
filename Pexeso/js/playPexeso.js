@@ -14,22 +14,22 @@ function changePlayerColor(turn){
 			let nameOne = document.getElementById("nameOne");
 			nameOne.style.border = "";
 			nameOne.style.borderRadius = "12px";
-			nameOne.style.backgroundColor = "rgb(197, 31, 147, 1)";
+			nameOne.style.backgroundColor = "rgba(197, 31, 147, 1)";
 
-			nameTwo.style.border = "thick solid rgb(255, 255, 255, 0.4)";
+			nameTwo.style.border = "thick solid rgba(255, 255, 255, 0.4)";
 			nameTwo.style.borderRadius = "12px";
-			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 0)";
+			nameTwo.style.backgroundColor = "rgba(6, 19, 77, 0)";
 		//	nameTwo.style.borderRadius = "";
 		
 		}else{
 			let nameTwo = document.getElementById("nameTwo");
-			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 1)";
+			nameTwo.style.backgroundColor = "rgba(6, 19, 77, 1)";
 			nameTwo.style.border = "";
 			nameTwo.style.borderRadius = "12px";
 
-			nameOne.style.border = "thick solid rgb(255, 255, 255, 0.4)";
+			nameOne.style.border = "thick solid rgba(255, 255, 255, 0.4)";
 			nameOne.style.borderRadius = "12px";
-			nameOne.style.backgroundColor = "rgb(197, 31, 147, 0)";
+			nameOne.style.backgroundColor = "rgba(197, 31, 147, 0)";
 		//	nameOne.style.borderRadius = "";
 
 		}
