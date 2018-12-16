@@ -9,10 +9,14 @@ let playerTwo = {
 				point:0
 }
 
+let enableFunc=true;
+
 function changePlayerColor(turn){
+
+
 	if(turn == true){
 			let nameOne = document.getElementById("nameOne");
-			nameOne.style.border = "";
+			nameOne.style.border = "thick solid rgba(6, 19, 77, 1)";
 			nameOne.style.borderRadius = "12px";
 			nameOne.style.backgroundColor = "rgba(197, 31, 147, 1)";
 
@@ -24,7 +28,7 @@ function changePlayerColor(turn){
 		}else{
 			let nameTwo = document.getElementById("nameTwo");
 			nameTwo.style.backgroundColor = "rgba(6, 19, 77, 1)";
-			nameTwo.style.border = "";
+			nameTwo.style.border = "thick solid rgba(197, 31, 147, 1)";
 			nameTwo.style.borderRadius = "12px";
 
 			nameOne.style.border = "thick solid rgba(255, 255, 255, 0.4)";
@@ -141,6 +145,10 @@ function resetVars() { // FUNKCOA, RESETUJE PREMENNE
 let winner;
 function match(event) {
 
+
+	if(enableFunc===true){
+
+
 	//console.log('menim data (pole gameboard)');
 	flipCard(event.target.id);
 	//console.log(gameboard);
@@ -248,7 +256,14 @@ function match(event) {
 		resetFlip();
 		setTimeout(repaint,800);
 		setTimeout(changePlayerColor,800,playerOne.turn);
+		enableFunc=false;
+		setTimeout(function(){ enableFunc=true; }, 800);
 	}
+
+
+}
+
+	
 
 }
 
