@@ -237,12 +237,12 @@ function match(event) {
 
 		if((playerOne.point+playerTwo.point)==(sizeX*sizeY)/2){
 			if(playerOne.point>playerTwo.point){
-				winner=playerOne.name;
+				winner="Winner is: "+playerOne.name;
 			}else if (playerOne.point<playerTwo.point){
-				winner=playerTwo.name;
+				winner="Winner is"+playerTwo.name;
 			}
 			else{
-				winner=playerOne.name +"and"+ playerTwo.name;
+				winner="Winners are: "+playerOne.name +" and "+ playerTwo.name;
 			}
 			end();
 			return;
@@ -274,7 +274,7 @@ function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
 	playerTwo.point=0;
 	document.getElementById("container").style.visibility="hidden";
 	document.getElementById("endGame").style.visibility="visible";
-	document.getElementById("winn").innerHTML= "<h1 id='winn'> Winner is: "+winner+"</h1>";	
+	document.getElementById("winn").innerHTML= "<h1 id='winn'>"+winner+"</h1>";	
 }
 
 function clearBoard(elementID) {
