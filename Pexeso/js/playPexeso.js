@@ -9,27 +9,31 @@ let playerTwo = {
 				point:0
 }
 
+let enableFunc=true;
+
 function changePlayerColor(turn){
+
+
 	if(turn == true){
 			let nameOne = document.getElementById("nameOne");
-			nameOne.style.border = "";
+			nameOne.style.border = "thick solid rgba(6, 19, 77, 1)";
 			nameOne.style.borderRadius = "12px";
-			nameOne.style.backgroundColor = "rgb(197, 31, 147, 1)";
+			nameOne.style.backgroundColor = "rgba(197, 31, 147, 1)";
 
-			nameTwo.style.border = "thick solid rgb(255, 255, 255, 0.4)";
+			nameTwo.style.border = "thick solid rgba(255, 255, 255, 0.4)";
 			nameTwo.style.borderRadius = "12px";
-			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 0)";
+			nameTwo.style.backgroundColor = "rgba(6, 19, 77, 0)";
 		//	nameTwo.style.borderRadius = "";
 		
 		}else{
 			let nameTwo = document.getElementById("nameTwo");
-			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 1)";
-			nameTwo.style.border = "";
+			nameTwo.style.backgroundColor = "rgba(6, 19, 77, 1)";
+			nameTwo.style.border = "thick solid rgba(197, 31, 147, 1)";
 			nameTwo.style.borderRadius = "12px";
 
-			nameOne.style.border = "thick solid rgb(255, 255, 255, 0.4)";
+			nameOne.style.border = "thick solid rgba(255, 255, 255, 0.4)";
 			nameOne.style.borderRadius = "12px";
-			nameOne.style.backgroundColor = "rgb(197, 31, 147, 0)";
+			nameOne.style.backgroundColor = "rgba(197, 31, 147, 0)";
 		//	nameOne.style.borderRadius = "";
 
 		}
@@ -141,6 +145,10 @@ function resetVars() { // FUNKCOA, RESETUJE PREMENNE
 let winner;
 function match(event) {
 
+
+	if(enableFunc===true){
+
+
 	//console.log('menim data (pole gameboard)');
 	flipCard(event.target.id);
 	//console.log(gameboard);
@@ -248,7 +256,14 @@ function match(event) {
 		resetFlip();
 		setTimeout(repaint,800);
 		setTimeout(changePlayerColor,800,playerOne.turn);
+		enableFunc=false;
+		setTimeout(function(){ enableFunc=true; }, 800);
 	}
+
+
+}
+
+	
 
 }
 
@@ -272,25 +287,6 @@ function restart() {
 	shuffle();
 	create();		//TOTO VYMAZAT AK CHCEME ABY ZMIZLA CELA BOARD AJ S KARTICKAMI, INAC TAM ZOSTANE
 	document.getElementById("endGame").innerHTML="";
-}
-
-function create2() {
-	clearBoard();
-	createGameboard();
-	shuffle();				//FUNKCIA NA VYKRESENIE ZATIAL TOTAAAALNA BETA VERZIA
-	for (i = 0; i < gameboard.length; i++) {
-		let x = document.createElement("IMG");
-		x.setAttribute("src", "../img/kosice/" + i + ".JPG");
-		x.setAttribute("id", gameboard[i].id);
-		x.setAttribute("name", gameboard[i].name);
-		x.setAttribute("onclick", "match(event)");
-		let y = document.createElement("DIV");
-		y.setAttribute("id", "board"+i);
-		y.setAttribute("class", "boardElement");
-		document.getElementById("gameBoard").appendChild(y);
-		document.getElementById("board"+i).appendChild(x);
-	}
-
 }
 
 function start() {				//pri nacitani stranky
