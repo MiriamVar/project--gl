@@ -2,8 +2,7 @@
 About:
 
 links: Trello-https://trello.com/project-gl
-       Slack communication-https://project1--gl.slack.com 
-
+   
 NAME:
 
 PROJECT:
@@ -20,7 +19,6 @@ Pixabay.com
 
 INTRODUCTION:
 registration 
-GDPR (study)
 
 Game board: NAME, 2 buttons(choosing of type of game-pexeso/memory)
 than: 2 buttons(choosing of type of game-clasical(same  pictures/word and picture)/about Kosice)
