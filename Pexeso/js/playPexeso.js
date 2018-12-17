@@ -9,27 +9,31 @@ let playerTwo = {
 				point:0
 }
 
+let enableFunc=true;
+
 function changePlayerColor(turn){
+
+
 	if(turn == true){
 			let nameOne = document.getElementById("nameOne");
-			nameOne.style.border = "";
+			nameOne.style.border = "thick solid rgba(6, 19, 77, 1)";
 			nameOne.style.borderRadius = "12px";
-			nameOne.style.backgroundColor = "rgb(197, 31, 147, 1)";
+			nameOne.style.backgroundColor = "rgba(197, 31, 147, 1)";
 
-			nameTwo.style.border = "thick solid rgb(255, 255, 255, 0.4)";
+			nameTwo.style.border = "thick solid rgba(255, 255, 255, 0.4)";
 			nameTwo.style.borderRadius = "12px";
-			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 0)";
+			nameTwo.style.backgroundColor = "rgba(6, 19, 77, 0)";
 		//	nameTwo.style.borderRadius = "";
 		
 		}else{
 			let nameTwo = document.getElementById("nameTwo");
-			nameTwo.style.backgroundColor = "rgb(6, 19, 77, 1)";
-			nameTwo.style.border = "";
+			nameTwo.style.backgroundColor = "rgba(6, 19, 77, 1)";
+			nameTwo.style.border = "thick solid rgba(197, 31, 147, 1)";
 			nameTwo.style.borderRadius = "12px";
 
-			nameOne.style.border = "thick solid rgb(255, 255, 255, 0.4)";
+			nameOne.style.border = "thick solid rgba(255, 255, 255, 0.4)";
 			nameOne.style.borderRadius = "12px";
-			nameOne.style.backgroundColor = "rgb(197, 31, 147, 0)";
+			nameOne.style.backgroundColor = "rgba(197, 31, 147, 0)";
 		//	nameOne.style.borderRadius = "";
 
 		}
@@ -141,6 +145,10 @@ function resetVars() { // FUNKCOA, RESETUJE PREMENNE
 let winner;
 function match(event) {
 
+
+	if(enableFunc===true){
+
+
 	//console.log('menim data (pole gameboard)');
 	flipCard(event.target.id);
 	//console.log(gameboard);
@@ -229,12 +237,12 @@ function match(event) {
 
 		if((playerOne.point+playerTwo.point)==(sizeX*sizeY)/2){
 			if(playerOne.point>playerTwo.point){
-				winner=playerOne.name;
+				winner="Winner of the game is: "+playerOne.name;
 			}else if (playerOne.point<playerTwo.point){
-				winner=playerTwo.name;
+				winner="Winner of the game is: "+playerTwo.name;
 			}
 			else{
-				winner=playerOne.name +"and"+ playerTwo.name;
+				winner="This game ended with a draw.";
 			}
 			end();
 			return;
@@ -248,7 +256,14 @@ function match(event) {
 		resetFlip();
 		setTimeout(repaint,800);
 		setTimeout(changePlayerColor,800,playerOne.turn);
+		enableFunc=false;
+		setTimeout(function(){ enableFunc=true; }, 800);
 	}
+
+
+}
+
+	
 
 }
 
@@ -259,7 +274,7 @@ function end(){     //FUNKCIA PO NAJDENI VSETKYCH PAROV
 	playerTwo.point=0;
 	document.getElementById("container").style.visibility="hidden";
 	document.getElementById("endGame").style.visibility="visible";
-	document.getElementById("winn").innerHTML= "<h1 id='winn'> Winner is: "+winner+"</h1>";	
+	document.getElementById("winn").innerHTML= "<h1 id='winn'>"+winner+"</h1>";	
 }
 
 function clearBoard(elementID) {
